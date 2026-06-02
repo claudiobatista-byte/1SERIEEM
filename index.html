@@ -583,11 +583,13 @@ function protegerTextareas(){
     });
     // 3) input — fallback que reverte colagens que escaparam (sem afetar digitação/autocomplete)
     ta.addEventListener('input', e => {
+      // 3a) colagem identificada com precisão pelo tipo de evento
       if (e.inputType && tiposColar.includes(e.inputType)) { reverter(ta); return; }
-      if (!e.inputType) { // navegadores antigos sem inputType: heurística de bloco grande
-        const prev = ta.dataset.prev || '';
-        if (ta.value.length - prev.length >= 20) { reverter(ta); return; }
-      }
+      // 3b) inserção de um bloco grande de uma só vez — cobre a "Área de transferência" do
+      //     Gboard/Android e teclados que inserem o clipe como se fosse digitação (insertText).
+      //     A digitação manual e o autocomplete inserem poucos caracteres por evento.
+      const prev = ta.dataset.prev || '';
+      if (ta.value.length - prev.length >= 25) { reverter(ta); return; }
       ta.dataset.prev = ta.value;
     });
   });
@@ -607,7 +609,6 @@ function marcar(num, idx){
 function onType(num){
   if (corrigido) return;
   const ta = document.getElementById('resp-'+num);
-  ta.dataset.prev = ta.value;
   const cc = document.getElementById('cc-'+num);
   const card = document.getElementById('qcard-'+num);
   const badge = document.getElementById('badge-'+num);
