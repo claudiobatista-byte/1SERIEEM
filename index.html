@@ -13,7 +13,8 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:"Source Serif 4",Georgia,serif;background:var(--claro);color:var(--escuro);line-height:1.7;
-  -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+  -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+  -webkit-touch-callout:none;-webkit-tap-highlight-color:transparent}
 
 /* ── CAPA ── */
 #capa{min-height:100vh;background:linear-gradient(145deg,#0d2233 0%,#1a6b8a 55%,#0f8c6e 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;position:relative;overflow:hidden}
@@ -105,7 +106,8 @@ body{font-family:"Source Serif 4",Georgia,serif;background:var(--claro);color:va
   width:100%;min-height:130px;padding:14px 16px;border:2px solid #e0ddf0;border-radius:8px;
   font-family:"Source Serif 4",Georgia,serif;font-size:.92rem;line-height:1.7;color:var(--escuro);
   resize:vertical;background:#fdfdff;outline:none;transition:border .2s;
-  -webkit-user-select:text;-moz-user-select:text;-ms-user-select:text;user-select:text
+  -webkit-user-select:text;-moz-user-select:text;-ms-user-select:text;user-select:text;
+  -webkit-touch-callout:none
 }
 .q-textarea:focus{border-color:var(--azul);background:white}
 .q-textarea.preenchida{border-color:var(--teal);background:#fafff8}
@@ -287,182 +289,182 @@ function esc(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').repla
 const QUIZ = [
   { num:1, enunc:'A palavra "moral" tem uma origem etimológica que ajuda a compreender seu sentido filosófico. Assinale a alternativa correta.',
     alts:[
-      'Vem do grego êthos, significando "caráter", e foi criada por Aristóteles.',
+      'Vem do grego êthos, que significa exclusivamente "caráter", e teria sido cunhada pelo filósofo Aristóteles em sua juventude.',
       'Vem do latim mos (plural mores), que significa "costume", e foi empregada por Cícero para traduzir uma ideia grega.',
-      'Vem do latim virtus, significando "força", e designa as leis escritas.',
-      'Vem do grego pólis, significando "cidade", e foi criada por Platão.',
-      'Não possui origem definida, surgindo apenas na Idade Moderna.'
+      'Vem do latim virtus, que significa "força" ou "coragem", e designava todo o conjunto das leis escritas de uma cidade.',
+      'Vem do grego pólis, que significa "cidade", e teria sido criada por Platão para nomear a vida em comunidade política.',
+      'Não possui origem etimológica definida, tendo surgido somente na Idade Moderna com os pensadores iluministas franceses.'
     ], correta:1, coment:'"Moral" vem do latim mos/mores (costume); o termo foi empregado por Cícero (Tema 1).' },
 
   { num:2, enunc:'Sobre a origem e o sentido da palavra "ética", é correto afirmar que ela:',
     alts:[
-      'Vem do latim mos e significa apenas "lei escrita".',
-      'Surgiu em Roma como sinônimo perfeito de "moral".',
-      'Designa o conjunto de costumes que jamais podem ser questionados.',
-      'Vem do grego êthos, que reúne os sentidos de "morada" (lugar onde convivemos) e "caráter" (modo de ser construído ao longo da vida).',
-      'Foi criada por Cícero para substituir a palavra "virtude".'
+      'Vem do latim mos e significa apenas "lei escrita", aquela que era imposta pela autoridade política da cidade-estado.',
+      'Surgiu na cidade de Roma, no tempo do filósofo Cícero, como um sinônimo perfeito e intercambiável da palavra "moral".',
+      'Designa o conjunto fixo dos costumes de um povo, costumes esses que jamais poderiam ser questionados pela razão humana.',
+      'Vem do grego êthos, que reúne os sentidos de "morada" (lugar onde convivemos) e "caráter" (modo de ser).',
+      'Foi criada pelo romano Cícero para substituir a antiga palavra "virtude", então caída em desuso entre os gregos.'
     ], correta:3, coment:'"Ética" vem do grego êthos, com os sentidos de morada e caráter (Tema 1).' },
 
   { num:3, enunc:'Embora no cotidiano "moral" e "ética" pareçam sinônimos, a Filosofia os distingue. Qual alternativa expressa corretamente essa diferença?',
     alts:[
-      'A moral descreve e segue os costumes aceitos por uma sociedade; a ética reflete sobre esses costumes, perguntando se são justos e se poderíamos agir de modo melhor.',
-      'A moral é uma ciência exata, enquanto a ética é uma religião.',
-      'A ética apenas obedece às leis, enquanto a moral as desrespeita.',
-      'A moral é universal e imutável; a ética muda conforme o país.',
-      'Não há diferença alguma entre os dois conceitos.'
+      'A moral descreve e segue os costumes de uma sociedade; a ética reflete sobre eles, perguntando se são justos.',
+      'A moral é uma ciência exata e plenamente demonstrável, ao passo que a ética não passa de um ramo da prática religiosa.',
+      'A ética se limita a obedecer cegamente a todas as leis, enquanto a moral existe justamente para poder desrespeitá-las.',
+      'A moral é totalmente universal e imutável; já a ética seria aquilo que muda conforme o país e a época histórica.',
+      'Não existe diferença alguma entre os dois conceitos, sendo apenas duas palavras distintas para nomear a mesma coisa.'
     ], correta:0, coment:'A moral segue/descreve costumes; a ética os questiona à luz da razão e da justiça (Tema 1).' },
 
   { num:4, enunc:'O texto afirma que "o senso moral nem sempre é suficiente". Essa ideia significa que:',
     alts:[
-      'Devemos sempre fazer o que a maioria faz, sem exceção.',
-      'Os costumes de uma sociedade são sempre justos.',
-      'Fazer "o que todo mundo faz" nem sempre é justo; é preciso examinar os hábitos à luz da razão, da justiça e da dignidade humana.',
-      'A reflexão ética deve ser abandonada em favor do costume.',
-      'As leis de cada época jamais devem ser revistas.'
+      'Significa que devemos sempre fazer exatamente aquilo que a maioria absoluta das pessoas faz, sem jamais abrir qualquer tipo de exceção.',
+      'Significa que os costumes adotados por uma sociedade são, por definição, sempre justos e moralmente corretos.',
+      'Significa que fazer "o que todo mundo faz" nem sempre é justo: é preciso examinar os hábitos à luz da razão e da dignidade.',
+      'Significa que a reflexão ética deve ser sempre abandonada em favor da força e da tradição do costume já estabelecido.',
+      'Significa que as leis e os costumes de cada época são definitivos e jamais devem ser revistos pelas gerações futuras.'
     ], correta:2, coment:'O senso moral (seguir o costume) nem sempre é justo; é preciso a reflexão ética (Tema 1).' },
 
   { num:5, enunc:'Relacione corretamente os filósofos da Antiguidade Clássica às suas contribuições para a ética.',
     alts:[
-      'Sócrates definiu a ideia de bem; Platão investigou as virtudes; Aristóteles negou a ética.',
-      'Os três defenderam abertamente que a escravidão era injusta.',
-      'Aristóteles ensinou o autoconhecimento; Sócrates criou a pólis; Platão aboliu os costumes.',
-      'Nenhum deles se ocupou de questões éticas.',
-      'Sócrates ensinava que o autoconhecimento é a base da boa conduta; Platão buscou definir a ideia de bem; Aristóteles investigou as virtudes de uma vida plena.'
+      'Sócrates teria definido a ideia de bem, Platão investigou todas as virtudes humanas e Aristóteles negou valor à ética.',
+      'Os três grandes filósofos defenderam abertamente, em diversas de suas obras, que a escravidão era uma instituição injusta.',
+      'Aristóteles foi quem ensinou o autoconhecimento, Sócrates teria fundado a pólis e Platão pregou a abolição dos costumes.',
+      'Nenhum dos três filósofos chegou a se ocupar de questões éticas, dedicando-se unicamente à matemática e à astronomia.',
+      'Sócrates ensinava que o autoconhecimento é a base da boa conduta; Platão buscou a ideia de bem; Aristóteles, as virtudes.'
     ], correta:4, coment:'Sócrates (autoconhecimento), Platão (ideia de bem), Aristóteles (virtudes) — Tema 1.' },
 
   { num:6, enunc:'Ao afirmar que a moral é "particular" e "histórica", o texto quer dizer que ela:',
     alts:[
-      'É igual em todas as sociedades e jamais muda.',
-      'Varia de uma cultura para outra (particular) e se transforma ao longo do tempo (histórica).',
-      'Foi criada de uma vez por todas na Grécia Antiga.',
-      'Depende exclusivamente das leis da natureza.',
-      'Não tem qualquer relação com os costumes humanos.'
+      'Que ela é exatamente igual em absolutamente todas as sociedades humanas e jamais sofre qualquer tipo de mudança.',
+      'Que ela varia de uma cultura para outra (particular) e se transforma ao longo do tempo (histórica).',
+      'Que ela foi criada de uma vez por todas pelos antigos filósofos da Grécia, sem qualquer alteração posterior na história.',
+      'Que ela depende exclusivamente das leis da natureza, e nunca das escolhas e dos costumes construídos pelos seres humanos.',
+      'Que ela não guarda qualquer relação com os costumes de um povo, sendo apenas fruto direto da sua tradição religiosa.'
     ], correta:1, coment:'A moral é particular (varia no espaço) e histórica (muda no tempo) — Tema 1.' },
 
   { num:7, enunc:'O conceito de "Antiguidade Clássica" possui uma origem histórica precisa. Assinale a alternativa correta.',
     alts:[
-      'Foi criado pelos próprios gregos do Período Homérico.',
-      'Surgiu na Idade Média para condenar a cultura pagã.',
-      'Foi formulado no século XIX por arqueólogos alemães.',
-      'Foi cunhado pelos humanistas do Renascimento (séc. XV–XVI), que viam nos valores greco-latinos a gênese do Ocidente; "clássico" associa-se à excelência e ao modelo a seguir.',
-      'É sinônimo de "pré-história", designando o período anterior à escrita.'
+      'Foi criado pelos próprios gregos antigos, ainda durante o Período Homérico, com o objetivo de exaltar a sua cultura.',
+      'Surgiu na Idade Média, formulado pela Igreja Católica com o objetivo expresso de condenar a cultura pagã da Antiguidade.',
+      'Foi proposto apenas no século XIX, por um grupo de arqueólogos alemães que escavavam os antigos sítios da Grécia.',
+      'Foi cunhado pelos humanistas do Renascimento (séc. XV–XVI), que viam nos valores greco-latinos a gênese do Ocidente.',
+      'É um sinônimo da palavra "pré-história" e designa todo o longo período anterior à invenção da escrita pela humanidade.'
     ], correta:3, coment:'O termo foi cunhado pelos humanistas do Renascimento (Tema 2).' },
 
   { num:8, enunc:'Considere a periodização da história grega. Qual associação entre período e característica está CORRETA?',
     alts:[
-      'No Período Arcaico (séc. VIII–VI a.C.) surge a pólis, com autonomia política, e ocorre a expansão colonial no Mediterrâneo.',
-      'No Período Creto-Micênico já existia a democracia consolidada.',
-      'O Período Homérico foi marcado pela dominação macedônica.',
-      'O Período Helenístico antecede o surgimento dos genos.',
-      'No Período Clássico não havia qualquer forma de escravidão.'
+      'No Período Arcaico (séc. VIII–VI a.C.) surge a pólis, com autonomia política, e ocorre a expansão colonial.',
+      'No Período Creto-Micênico (2000–1200 a.C.) a democracia ateniense já se encontrava completamente consolidada e estável.',
+      'O Período Homérico (séc. XII–VIII a.C.) foi inteiramente marcado pela dominação macedônica e pela fusão cultural oriental.',
+      'O Período Helenístico (338–146 a.C.) antecede e dá origem ao surgimento dos primeiros genos da sociedade grega antiga.',
+      'No Período Clássico (séc. V–IV a.C.) não existia ainda nenhuma forma de trabalho escravo dentro da sociedade grega.'
     ], correta:0, coment:'No Período Arcaico surge a pólis e ocorre a expansão colonial (Tema 2).' },
 
   { num:9, enunc:'Segundo o historiador P. P. A. Funari, qual elemento define essencialmente a pólis grega?',
     alts:[
-      'O território militar conquistado pelas guerras.',
-      'A existência de um rei absoluto e hereditário.',
-      'O demos (o povo) — coletividade submetida aos mesmos costumes fundamentais e unida por um culto comum às divindades protetoras.',
-      'A ausência de qualquer religião compartilhada.',
-      'A presença obrigatória de colônias estrangeiras.'
+      'O território militar que foi conquistado por meio das guerras e que era protegido por grandes muralhas de pedra.',
+      'A existência de um rei absoluto e hereditário, que governava sozinho tanto a cidade quanto todo o campo ao redor.',
+      'O demos (o povo) — coletividade submetida aos mesmos costumes e unida por um culto comum às divindades protetoras.',
+      'A ausência completa de qualquer tipo de religião ou de culto que fosse compartilhado entre os seus diversos habitantes.',
+      'A presença sempre obrigatória de colônias estrangeiras encarregadas de administrar toda a vida política da cidade.'
     ], correta:2, coment:'Para Funari, a pólis define-se pelo demos, o povo (Tema 2).' },
 
   { num:10, enunc:'A expansão colonial grega pelo Mediterrâneo provocou transformações socioeconômicas profundas. Entre elas está:',
     alts:[
-      'O fim do comércio e o retorno ao escambo.',
-      'A extinção completa da aristocracia rural.',
-      'A proibição do uso de moedas.',
-      'A concentração de todo o poder nas mãos dos dórios.',
-      'O desenvolvimento de uma economia monetária (o dracma), o surgimento de uma classe de comerciantes que rivalizava com os eupátridas e reformas que levaram à democracia em Atenas.'
+      'O fim completo do comércio marítimo grego e o retorno generalizado de toda a economia ao antigo sistema de escambo.',
+      'A extinção total da aristocracia rural grega e o desaparecimento definitivo dos antigos e poderosos eupátridas.',
+      'A proibição do uso de qualquer moeda e o controle estatal absoluto sobre toda a produção agrícola das colônias.',
+      'A concentração de todo o poder político e também econômico nas mãos exclusivas dos antigos invasores dórios do norte.',
+      'A economia monetária (o dracma) e uma classe de comerciantes que rivalizava com os eupátridas, base da democracia.'
     ], correta:4, coment:'A expansão trouxe moeda (dracma), nova classe de comerciantes e a democracia ateniense (Tema 2).' },
 
   { num:11, enunc:'Sobre o sistema escravista grego no Período Clássico, é correto afirmar que:',
     alts:[
-      'A escravidão tornou-se a forma de trabalho hegemônica, pois o trabalho manual passou a ser desprezado pelos homens livres, cuja liberdade se tornou indissociável da massa escrava.',
-      'A escravidão foi abolida pela democracia ateniense.',
-      'Os cidadãos gregos preferiam o trabalho manual à ociosidade.',
-      'Os escravos tinham os mesmos direitos políticos dos cidadãos.',
-      'A escravidão existia apenas em Esparta, nunca em Atenas.'
+      'A escravidão tornou-se a forma de trabalho hegemônica, pois o trabalho manual passou a ser desprezado pelos livres.',
+      'A escravidão foi total e completamente abolida pela democracia ateniense logo no início do Período Clássico grego.',
+      'Os cidadãos gregos, de modo geral, preferiam realizar o pesado trabalho manual à vida marcada pela ociosidade e pelo ócio.',
+      'Os escravos gregos possuíam exatamente os mesmos direitos políticos e civis que eram garantidos a todos os cidadãos livres.',
+      'A escravidão existia somente na cidade-estado de Esparta, jamais tendo sido praticada na cidade-estado de Atenas.'
     ], correta:0, coment:'No Período Clássico a escravidão tornou-se hegemônica; a liberdade do cidadão dependia da massa escrava (Tema 2).' },
 
   { num:12, enunc:'Platão afirmou: "O privilégio do homem livre não é a liberdade, mas a ociosidade, que tem por complemento o trabalho forçado dos outros, isto é, a escravatura." A interpretação mais adequada é:',
     alts:[
-      'Platão defendia a abolição imediata da escravidão.',
-      'Para Platão, o trabalho forçado era desnecessário à sociedade.',
-      'A condição privilegiada (a ociosidade) do cidadão livre dependia diretamente do trabalho forçado dos escravos que o sustentavam.',
-      'A liberdade e a escravidão não tinham qualquer relação entre si.',
-      'Os homens livres trabalhavam mais do que os escravos.'
+      'Que Platão, na verdade, defendia abertamente a abolição imediata e completa de toda e qualquer forma de escravidão.',
+      'Que, para Platão, o trabalho forçado realizado pelos escravos era totalmente desnecessário à vida em sociedade.',
+      'Que a condição privilegiada (a ociosidade) do cidadão livre dependia diretamente do trabalho forçado dos escravos.',
+      'Que a liberdade do cidadão e a escravidão dos cativos não guardavam, entre si, nenhuma relação de dependência.',
+      'Que os homens livres, na prática cotidiana, trabalhavam muito mais arduamente do que os próprios escravos da cidade.'
     ], correta:2, coment:'A frase revela que a ociosidade do cidadão dependia do trabalho escravo (Tema 2).' },
 
   { num:13, enunc:'O historiador Perry Anderson faz uma observação importante sobre a escravidão antiga. Qual é ela?',
     alts:[
-      'A escravidão nunca existiu fora da Grécia e de Roma.',
-      'Embora existisse em várias sociedades antigas, foi apenas na Grécia (e, depois, em Roma) que a escravidão se transformou no sistema de trabalho dominante.',
-      'A escravidão foi mais branda na Grécia do que em qualquer outro lugar.',
-      'A escravidão grega baseava-se exclusivamente no endividamento.',
-      'A escravidão desapareceu durante o Período Clássico.'
+      'Que a escravidão jamais teria existido em qualquer outra sociedade humana situada fora da Grécia e da Roma da Antiguidade.',
+      'Que, existindo em várias sociedades antigas, só na Grécia e em Roma ela virou o sistema de trabalho dominante.',
+      'Que a escravidão antiga foi sempre muito mais branda na Grécia antiga do que em qualquer outra civilização do mundo.',
+      'Que a escravidão grega se baseava única e exclusivamente no endividamento dos cidadãos considerados mais pobres da cidade.',
+      'Que a escravidão antiga teria desaparecido por completo justamente durante o período de auge do Período Clássico grego.'
     ], correta:1, coment:'Perry Anderson: só na Grécia e em Roma a escravidão se tornou sistema dominante (Tema 2).' },
 
   { num:14, enunc:'Sobre a organização política da República Romana (509–27 a.C.), é correto afirmar que o poder:',
     alts:[
-      'Concentrava-se exclusivamente nas mãos de um imperador.',
-      'Pertencia apenas aos escravos libertos.',
-      'Era exercido por um rei eletivo e vitalício.',
-      'Estava nas mãos dos "bárbaros" que cercavam Roma.',
-      'Distribuía-se entre o Senado, as Assembleias (Curiata, Centuriata e Plebis) e as Magistraturas.'
+      'Concentrava-se exclusivamente nas mãos de um único imperador, dotado de poderes absolutos, perpétuos e vitalícios.',
+      'Pertencia unicamente aos escravos que haviam sido libertados por seus antigos senhores patrícios mais ricos da cidade.',
+      'Era exercido por um único rei, de caráter eletivo e vitalício, dotado de funções tanto militares quanto religiosas.',
+      'Estava nas mãos dos povos "bárbaros" que viviam muito além das fronteiras e que constantemente cercavam a cidade de Roma.',
+      'Distribuía-se entre o Senado, as diversas Assembleias (Curiata, Centuriata e Plebis) e as Magistraturas eleitas.'
     ], correta:4, coment:'Na República, o poder distribuía-se entre Senado, Assembleias e Magistraturas (Tema 3).' },
 
   { num:15, enunc:'A trajetória de Roma é tradicionalmente delimitada por dois marcos. Assinale a alternativa correta.',
     alts:[
-      'Da fundação em 509 a.C. até a Pax Romana em 27 a.C.',
-      'Da Monarquia em 450 a.C. até a Lei Canuléia em 445 a.C.',
-      'Da República em 753 a.C. até o Império em 27 d.C.',
-      'Da fundação mítica em 753 a.C. (atribuída a Rômulo e Remo) até a queda do Império do Ocidente em 476 d.C., quando Rômulo Augusto foi deposto por Odoacro.',
-      'Do Alto Império em 476 a.C. até o Baixo Império em 27 d.C.'
+      'Da fundação da República romana, em 509 a.C., até a instauração da Pax Romana do imperador Augusto, em 27 a.C.',
+      'Do início do período da Monarquia, em 450 a.C., até a promulgação da chamada Lei Canuléia, ocorrida em 445 a.C.',
+      'Da proclamação da República romana, em 753 a.C., até o começo do longo período do Império romano, em 27 d.C.',
+      'Da fundação mítica em 753 a.C. (Rômulo e Remo) até a queda do Império do Ocidente, em 476 d.C., com Odoacro.',
+      'Do início do chamado Alto Império, em 476 a.C., até a chegada do período do Baixo Império, por volta de 27 d.C.'
     ], correta:3, coment:'Roma vai da fundação mítica (753 a.C.) à queda do Ocidente (476 d.C., Odoacro) — Tema 3.' },
 
   { num:16, enunc:'As conquistas políticas da plebe romana resultaram de longas lutas. Qual associação entre lei e conteúdo está CORRETA?',
     alts:[
-      'A Lei Licínia (367 a.C.) proibiu o casamento entre patrícios e plebeus.',
-      'A Lei Canuléia (445 a.C.) criou o Direito Romano escrito.',
-      'A Lei das Doze Tábuas (450 a.C.) estabeleceu os fundamentos do Direito Romano.',
-      'A Lei das Doze Tábuas baniu a plebe do consulado.',
-      'A Lei Canuléia extinguiu o Senado.'
+      'A Lei Licínia, de 367 a.C., foi justamente a responsável por proibir o casamento entre os patrícios e os plebeus.',
+      'A Lei Canuléia, de 445 a.C., foi a que criou e organizou todo o Direito Romano em sua forma definitivamente escrita.',
+      'A Lei das Doze Tábuas, de 450 a.C., estabeleceu os fundamentos do Direito Romano em sua forma escrita.',
+      'A Lei das Doze Tábuas, de 450 a.C., teria banido definitivamente toda a plebe do acesso ao importante cargo de consulado.',
+      'A Lei Canuléia, de 445 a.C., determinou de forma imediata a completa extinção do Senado romano e de todas as suas funções.'
     ], correta:2, coment:'A Lei das Doze Tábuas (450 a.C.) é a base do Direito Romano (Tema 3).' },
 
   { num:17, enunc:'Na sociedade romana, qual era a condição jurídica do escravo e suas principais origens?',
     alts:[
-      'O escravo era considerado propriedade ou "instrumento" do senhor; suas origens principais eram a guerra (a mais importante), o endividamento, a descendência e o abandono/pobreza.',
-      'O escravo tinha cidadania plena e podia votar nas Assembleias.',
-      'A única origem da escravidão romana era o nascimento.',
-      'Os escravos eram, em sua maioria, senadores empobrecidos.',
-      'A escravidão romana proibia o trabalho na agricultura.'
+      'Era propriedade ou "instrumento" do senhor; suas origens eram a guerra (principal), o endividamento e a descendência.',
+      'Era considerado um cidadão de segunda classe, porém com pleno direito de votar em todas as Assembleias romanas da República.',
+      'A única origem possível para a escravidão romana era o nascimento do indivíduo dentro da própria casa do seu senhor.',
+      'Os escravos eram, em sua imensa maioria, antigos senadores que tinham empobrecido durante as longas guerras de Roma.',
+      'A própria lei romana proibia de forma expressa o emprego de mão de obra escrava nas mais diversas atividades agrícolas.'
     ], correta:0, coment:'O escravo era propriedade/"instrumento"; origens: guerra, endividamento, descendência, abandono (Tema 3).' },
 
   { num:18, enunc:'A Revolta de Espártaco (73 a.C.) ocupa lugar de destaque na história romana porque:',
     alts:[
-      'Resultou na abolição imediata da escravidão em Roma.',
-      'Foi liderada por um senador patrício.',
-      'Garantiu aos escravos o direito de voto.',
-      'Foi liderada por um gladiador e, embora derrotada e desprezada por cronistas como Floro, tornou-se, séculos depois, símbolo de resistência contra a opressão.',
-      'Ocorreu durante o Baixo Império, provocando a queda de Roma.'
-    ], correta:3, coment:'Espártaco, gladiador, liderou a revolta de 73 a.C.; virou símbolo de resistência (Tema 3).' },
+      'Resultou na abolição totalmente imediata e definitiva da escravidão em todo o vasto território controlado por Roma.',
+      'Foi liderada por um senador patrício que estava profundamente descontente com os rumos políticos tomados pela República.',
+      'Garantiu a todos os escravos sobreviventes da revolta o direito de cidadania e de voto em todas as Assembleias romanas.',
+      'Foi liderada por um gladiador e, embora derrotada e desprezada por cronistas como Floro, virou símbolo de resistência.',
+      'Ocorreu já durante o Baixo Império romano e foi a causa direta e imediata da queda definitiva de Roma, em 476 d.C.'
+    ], correta:3, coment:'Espártaco, gladiador, liderou a revolta de 73 a.C.; tornou-se símbolo de resistência (Tema 3).' },
 
   { num:19, enunc:'A expansão romana pelo Mediterrâneo (incluindo as Guerras Púnicas contra Cartago) trouxe consequências socioeconômicas. Qual alternativa as descreve corretamente?',
     alts:[
-      'Fortalecimento dos pequenos proprietários e fim dos latifúndios.',
-      'Afluxo de riquezas, concentração de terras em latifúndios, ruína do pequeno proprietário, êxodo rural com a formação da "clientela urbana" e a política de "pão e circo".',
-      'Distribuição igualitária das terras conquistadas entre os camponeses.',
-      'Redução do número de escravos e fim imediato das guerras.',
-      'Proibição dos espetáculos públicos e dos alimentos gratuitos.'
+      'Promoveu o grande fortalecimento dos pequenos proprietários rurais e o desaparecimento completo de todos os latifúndios.',
+      'Gerou afluxo de riquezas, latifúndios, ruína do pequeno proprietário, êxodo rural e a política de "pão e circo".',
+      'Resultou na distribuição perfeitamente igualitária das terras conquistadas entre todos os camponeses e soldados livres.',
+      'Provocou a imediata e drástica redução do número de escravos e o fim de todas as guerras de conquista de Roma.',
+      'Levou à proibição de todos os grandes espetáculos públicos e ao fim da distribuição de alimentos gratuitos ao povo.'
     ], correta:1, coment:'A expansão gerou latifúndios, ruína do pequeno proprietário, êxodo rural e "pão e circo" (Tema 3).' },
 
   { num:20, enunc:'A partir do século II d.C., o fim da expansão territorial desencadeou a crise do sistema escravista romano. Qual alternativa explica corretamente esse processo?',
     alts:[
-      'O aumento das guerras gerou excesso de escravos e superprodução.',
-      'A escravidão foi substituída pela democracia direta.',
-      'O Estado romano tornou-se mais rico e centralizado.',
-      'Os latifúndios desapareceram e a população voltou às cidades.',
-      'Menos guerras significaram menos escravos e queda na produção e na arrecadação; diante da crise, houve ruralização e a substituição do escravismo pelo colonato, no qual o colono ficava vinculado à terra pagando renda ao proprietário.'
+      'O aumento contínuo das guerras de conquista teria gerado um grande excesso de escravos e uma enorme superprodução agrícola.',
+      'O sistema escravista foi pacífica e gradualmente substituído por uma forma bastante avançada de democracia direta e popular.',
+      'O Estado romano tornou-se, justamente nesse período, muito mais rico, centralizado e militarmente fortalecido do que antes.',
+      'Os grandes latifúndios desapareceram por completo e toda a população urbana retornou em massa para as grandes cidades.',
+      'Menos guerras significaram menos escravos e queda na produção; veio a ruralização e a substituição pelo colonato.'
     ], correta:4, coment:'Sem conquistas, faltaram escravos; veio a ruralização e o colonato (Tema 3).' }
 ];
 
@@ -539,6 +541,22 @@ function buildDiss(){
           <div class="char-count" id="cc-${q.num}">0 / ${MIN_CHARS} caracteres mínimos</div>
         </div>
       </div>`;
+  });
+  protegerTextareas();
+}
+
+function protegerTextareas(){
+  // Bloqueio robusto de copiar/colar/recortar/arrastar — inclusive em celulares e tablets.
+  document.querySelectorAll('.q-textarea').forEach(ta => {
+    ['paste','copy','cut','drop','dragstart','dragover','dragenter','contextmenu'].forEach(ev => {
+      ta.addEventListener(ev, e => { e.preventDefault(); e.stopPropagation(); return false; });
+    });
+    // beforeinput cobre colar/arrastar/autocompletar em navegadores móveis (iOS/Android)
+    ta.addEventListener('beforeinput', e => {
+      if (['insertFromPaste','insertFromPasteAsQuotation','insertFromDrop','insertReplacementText'].includes(e.inputType)) {
+        e.preventDefault();
+      }
+    });
   });
 }
 
