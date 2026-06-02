@@ -155,6 +155,10 @@ body{font-family:"Source Serif 4",Georgia,serif;background:var(--claro);color:va
 @keyframes spin{to{transform:rotate(360deg)}}
 .pdf-spin{width:40px;height:40px;border:4px solid #e8e8f0;border-top-color:var(--azul);border-radius:50%;animation:spin .8s linear infinite;margin:14px auto 0}
 
+/* ── TOAST AVISO COLAR ── */
+#toast-colar{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--vermelho);color:#fff;font-family:"Source Serif 4",serif;font-size:.85rem;font-weight:600;padding:12px 22px;border-radius:30px;box-shadow:0 8px 28px rgba(214,69,69,.4);z-index:9500;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;max-width:90vw;text-align:center}
+#toast-colar.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
 @media(max-width:640px){
   .cbox{padding:30px 22px}
   .cbox-titulo{font-size:1.6rem}
@@ -547,15 +551,44 @@ function buildDiss(){
 
 function protegerTextareas(){
   // Bloqueio robusto de copiar/colar/recortar/arrastar — inclusive em celulares e tablets.
+  const tiposColar = ['insertFromPaste','insertFromPasteAsQuotation','insertFromDrop','insertFromYank'];
+
+  function flashAviso(ta){
+    let t = document.getElementById('toast-colar');
+    if(!t){
+      t = document.createElement('div'); t.id = 'toast-colar';
+      t.textContent = '⚠️ Colar está desativado. Digite sua resposta.';
+      document.body.appendChild(t);
+    }
+    t.classList.add('show');
+    clearTimeout(window.__toastT);
+    window.__toastT = setTimeout(()=>t.classList.remove('show'), 1800);
+  }
+  function numDe(ta){ return parseInt(ta.id.split('-')[1], 10); }
+  function reverter(ta){
+    ta.value = ta.dataset.prev || '';
+    flashAviso(ta);
+    onType(numDe(ta));
+  }
+
   document.querySelectorAll('.q-textarea').forEach(ta => {
+    ta.dataset.prev = ta.value || '';
+    // 1) Eventos clássicos
     ['paste','copy','cut','drop','dragstart','dragover','dragenter','contextmenu'].forEach(ev => {
       ta.addEventListener(ev, e => { e.preventDefault(); e.stopPropagation(); return false; });
     });
-    // beforeinput cobre colar/arrastar/autocompletar em navegadores móveis (iOS/Android)
+    // 2) beforeinput — barra a colagem antes de inserir (Chrome/Safari modernos)
     ta.addEventListener('beforeinput', e => {
-      if (['insertFromPaste','insertFromPasteAsQuotation','insertFromDrop','insertReplacementText'].includes(e.inputType)) {
-        e.preventDefault();
+      if (tiposColar.includes(e.inputType)) { e.preventDefault(); flashAviso(ta); }
+    });
+    // 3) input — fallback que reverte colagens que escaparam (sem afetar digitação/autocomplete)
+    ta.addEventListener('input', e => {
+      if (e.inputType && tiposColar.includes(e.inputType)) { reverter(ta); return; }
+      if (!e.inputType) { // navegadores antigos sem inputType: heurística de bloco grande
+        const prev = ta.dataset.prev || '';
+        if (ta.value.length - prev.length >= 20) { reverter(ta); return; }
       }
+      ta.dataset.prev = ta.value;
     });
   });
 }
@@ -574,6 +607,7 @@ function marcar(num, idx){
 function onType(num){
   if (corrigido) return;
   const ta = document.getElementById('resp-'+num);
+  ta.dataset.prev = ta.value;
   const cc = document.getElementById('cc-'+num);
   const card = document.getElementById('qcard-'+num);
   const badge = document.getElementById('badge-'+num);
