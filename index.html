@@ -3,880 +3,224 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A Antiguidade Clássica — Atividade (20 Objetivas + 10 Dissertativas)</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:wght@300;400;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<title>Cultura Material e Imaterial — Índice | EM13CHS104</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --azul:#1a6b8a;--teal:#0f8c6e;--laranja:#e67e22;--vermelho:#d64545;
-  --escuro:#1a1a2e;--medio:#4a4a6a;--claro:#f0f0f8;
-  --sombra:0 4px 24px rgba(26,107,138,.12);--radius:12px
+  --azul:#1d3c47;
+  --azul-claro:#2f5c6b;
+  --bronze:#a9762f;
+  --bronze-claro:#c99a4d;
+  --sepia:#f7f1e6;
+  --papel:#fffdfa;
+  --tinta:#2c2a27;
+  --tinta-suave:#665f57;
+  --linha:#e6dcc8;
+  --branco:#ffffff;
+  --raio:12px;
+  --sombra:0 3px 14px rgba(29,60,71,.08);
+  --max:900px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:"Source Serif 4",Georgia,serif;background:var(--claro);color:var(--escuro);line-height:1.7;
-  -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
-  -webkit-touch-callout:none;-webkit-tap-highlight-color:transparent}
-
-/* ── CAPA ── */
-#capa{min-height:100vh;background:linear-gradient(145deg,#0d2233 0%,#1a6b8a 55%,#0f8c6e 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;position:relative;overflow:hidden}
-#capa::before{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
-.cbox{background:rgba(255,255,255,.12);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:48px 56px;max-width:640px;width:100%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.3)}
-.cbox-titulo{font-family:"Playfair Display",serif;font-size:2rem;font-weight:900;color:white;margin-bottom:8px;line-height:1.2}
-.cbox-sub{font-size:.9rem;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:10px}
-.cbox-disc{background:var(--teal);color:white;border-radius:40px;padding:6px 24px;display:inline-block;font-size:.88rem;font-weight:600;letter-spacing:.04em;margin-bottom:22px}
-.chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:28px}
-.chip{background:rgba(255,255,255,.15);color:rgba(255,255,255,.9);border-radius:20px;padding:.3rem .85rem;font-size:.77rem;font-weight:600;font-family:"JetBrains Mono",monospace}
-.campo-label{display:block;color:rgba(255,255,255,.8);font-size:.8rem;text-transform:uppercase;letter-spacing:.12em;margin-bottom:10px;text-align:left}
-.campo-nome{width:100%;padding:14px 18px;border:2px solid rgba(255,255,255,.35);border-radius:10px;background:rgba(255,255,255,.15);color:white;font-size:1.05rem;font-family:"Playfair Display",serif;outline:none;transition:border .2s;margin-bottom:22px}
-.campo-nome::placeholder{color:rgba(255,255,255,.45)}
-.campo-nome:focus{border-color:var(--teal);background:rgba(255,255,255,.2)}
-.btn-start{padding:14px 48px;background:var(--teal);color:white;border:none;border-radius:50px;font-size:1rem;font-family:"Source Serif 4",serif;font-weight:600;cursor:pointer;box-shadow:0 8px 24px rgba(15,140,110,.4);transition:transform .2s,box-shadow .2s;letter-spacing:.04em;width:100%}
-.btn-start:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 12px 32px rgba(15,140,110,.5)}
-.btn-start:disabled{opacity:.45;cursor:default}
-.capa-note{font-size:.72rem;color:rgba(255,255,255,.55);margin-top:.9rem}
-.seduc-bar{position:absolute;bottom:0;left:0;right:0;background:rgba(255,255,255,.07);padding:12px;text-align:center;color:rgba(255,255,255,.55);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase}
-
-/* ── CONTEÚDO ── */
-#conteudo{display:none}
-
-/* ── HEADER ── */
-.hdr-top{background:linear-gradient(90deg,var(--azul) 0%,var(--escuro) 100%);color:white;padding:12px 28px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 16px rgba(0,0,0,.2)}
-.hdr-nome{font-family:"JetBrains Mono",monospace;font-size:.82rem;color:rgba(255,255,255,.75)}
-.hdr-nome span{color:#a8e090;font-weight:600}
-.hdr-prog{font-size:.78rem;color:rgba(255,255,255,.7);font-family:"JetBrains Mono",monospace}
-.hdr-prog span{color:#ffd700;font-weight:700}
-.bprog-wrap{height:4px;background:rgba(255,255,255,.15);position:sticky;top:48px;z-index:99}
-.bprog{height:4px;background:var(--teal);transition:width .4s;width:0%}
-
-/* ── CONTAINER ── */
-.container{max-width:900px;margin:0 auto;padding:32px 20px 80px}
-
-/* ── BLOCO TEXTOS ── */
-.textos-card{background:white;border-radius:var(--radius);padding:32px 40px;margin-bottom:28px;box-shadow:var(--sombra);border-top:4px solid var(--azul)}
-.textos-title{font-family:"Playfair Display",serif;font-size:1.4rem;font-weight:900;color:var(--escuro);margin-bottom:6px}
-.textos-sub{font-size:.83rem;color:var(--medio);font-style:italic;margin-bottom:22px;line-height:1.5}
-.intro-p{font-size:.95rem;color:var(--escuro);line-height:1.75;margin-bottom:20px;text-align:justify}
-.texto-bloco{background:#f0f8fd;border-left:4px solid var(--azul);border-radius:0 10px 10px 0;padding:16px 20px;margin-bottom:14px}
-.texto-hdr{font-family:"JetBrains Mono",monospace;font-size:.72rem;font-weight:700;color:var(--azul);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px}
-.texto-corpo{font-size:.9rem;color:var(--escuro);line-height:1.75;text-align:justify;margin-bottom:8px}
-.texto-corpo em{font-style:italic;color:var(--medio)}
-.texto-cit{font-size:.86rem;color:var(--medio);font-style:italic;border-left:3px solid var(--teal);padding-left:12px;margin:8px 0}
-.texto-ref{font-size:.69rem;color:#999;font-style:italic;display:block;margin-top:12px;line-height:1.6}
-.divider{height:1px;background:linear-gradient(90deg,var(--azul),transparent);margin:20px 0}
-
-/* ── SEÇÃO ── */
-.sec-head{display:flex;align-items:center;gap:14px;margin:34px 0 4px}
-.sec-head .sec-tag{font-family:"JetBrains Mono",monospace;font-size:.7rem;font-weight:700;background:var(--azul);color:white;border-radius:20px;padding:5px 14px;letter-spacing:.1em;white-space:nowrap}
-.sec-head .sec-txt{font-family:"Playfair Display",serif;font-size:1.15rem;font-weight:700;color:var(--escuro)}
-.sec-head .sec-line{flex:1;height:2px;background:linear-gradient(90deg,var(--azul),transparent)}
-
-/* ── QUESTÕES ── */
-.q-card{background:white;border-radius:var(--radius);padding:26px 32px;margin:16px 0;box-shadow:var(--sombra);border-top:4px solid var(--claro);transition:border-color .3s}
-.q-card.respondida{border-top-color:var(--azul)}
-.q-card.acerto{border-top-color:var(--teal)}
-.q-card.erro{border-top-color:var(--vermelho)}
-.q-card.preenchida{border-top-color:var(--teal)}
-.q-num{font-family:"JetBrains Mono",monospace;font-size:.7rem;text-transform:uppercase;letter-spacing:.15em;color:var(--medio);margin-bottom:10px;display:flex;align-items:center;gap:8px}
-.q-badge{font-size:.65rem;color:white;border-radius:20px;padding:2px 10px;font-weight:700;display:none}
-.q-badge.b-ok{background:var(--teal);display:inline-block}
-.q-badge.b-no{background:var(--vermelho);display:inline-block}
-.q-badge.b-fill{background:var(--teal);display:none}
-.q-enunc{font-size:.97rem;color:var(--escuro);line-height:1.7;font-weight:600;margin-bottom:16px}
-
-/* ── ALTERNATIVAS ── */
-.opt{display:flex;gap:12px;align-items:flex-start;padding:11px 15px;border:2px solid #e3e0ef;border-radius:8px;margin-bottom:9px;cursor:pointer;transition:all .15s;background:#fdfdff}
-.opt:hover{border-color:var(--azul);background:#f4fafd}
-.opt.sel{border-color:var(--azul);background:#e9f4fb}
-.opt.correta{border-color:var(--teal);background:#e9faf3}
-.opt.errada{border-color:var(--vermelho);background:#fdeeee}
-.opt.travada{cursor:default}
-.opt.travada:hover{border-color:#e3e0ef;background:#fdfdff}
-.opt.travada.sel:hover{border-color:var(--azul);background:#e9f4fb}
-.opt.travada.correta:hover{border-color:var(--teal);background:#e9faf3}
-.opt.travada.errada:hover{border-color:var(--vermelho);background:#fdeeee}
-.opt-letra{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--claro);color:var(--medio);font-family:"JetBrains Mono",monospace;font-weight:700;font-size:.8rem;display:flex;align-items:center;justify-content:center;transition:all .15s}
-.opt.sel .opt-letra{background:var(--azul);color:white}
-.opt.correta .opt-letra{background:var(--teal);color:white}
-.opt.errada .opt-letra{background:var(--vermelho);color:white}
-.opt-txt{font-size:.92rem;color:var(--escuro);line-height:1.6;padding-top:2px}
-.opt-mark{margin-left:auto;font-size:1rem;align-self:center;display:none}
-
-/* ── DISSERTATIVA ── */
-.textarea-wrap{position:relative}
-.q-textarea{
-  width:100%;min-height:130px;padding:14px 16px;border:2px solid #e0ddf0;border-radius:8px;
-  font-family:"Source Serif 4",Georgia,serif;font-size:.92rem;line-height:1.7;color:var(--escuro);
-  resize:vertical;background:#fdfdff;outline:none;transition:border .2s;
-  -webkit-user-select:text;-moz-user-select:text;-ms-user-select:text;user-select:text;
-  -webkit-touch-callout:none
+html{scroll-behavior:smooth}
+body{
+  font-family:'Source Serif 4',Georgia,serif;
+  background:var(--papel);color:var(--tinta);
+  line-height:1.75;font-size:17px;
 }
-.q-textarea:focus{border-color:var(--azul);background:white}
-.q-textarea.preenchida{border-color:var(--teal);background:#fafff8}
-.q-textarea:disabled{background:#f5f5f5;color:#aaa;cursor:not-allowed}
-.char-count{font-family:"JetBrains Mono",monospace;font-size:.68rem;color:#bbb;text-align:right;margin-top:4px;transition:color .2s}
-.char-count.ok{color:var(--teal)}
-.char-count.warn{color:var(--laranja)}
+h1,h2,h3,h4{font-family:'Playfair Display',Georgia,serif;line-height:1.25;color:var(--azul)}
+a{color:var(--bronze)}
+p{margin-bottom:15px;text-align:justify}
 
-/* ── AVISO ── */
-#alerta-incompleto{display:none;background:#fff3cd;border:2px solid #ffc107;border-radius:10px;padding:16px 22px;margin:20px 0;color:#7d5a00;font-weight:600;font-size:.9rem}
-
-/* ── BOTÃO ENVIAR ── */
-.btn-enviar-wrap{margin:32px 0 20px;display:flex;gap:14px;flex-wrap:wrap}
-.btn-enviar{padding:14px 44px;background:var(--azul);color:white;border:none;border-radius:50px;font-size:1rem;font-family:"Source Serif 4",serif;font-weight:600;cursor:pointer;box-shadow:0 6px 20px rgba(26,107,138,.35);transition:all .2s;letter-spacing:.03em}
-.btn-enviar:hover{transform:translateY(-2px);background:#155d7a}
-
-/* ── POPUP ── */
-#popup-resultado{display:none;position:fixed;inset:0;background:rgba(26,26,46,.85);z-index:8000;align-items:center;justify-content:center;padding:1rem}
-#popup-resultado.aberto{display:flex}
-.popup-box{background:white;border-radius:20px;padding:2.6rem 2.4rem 2rem;max-width:500px;width:100%;text-align:center;box-shadow:0 24px 80px rgba(0,0,0,.4);animation:popIn .35s cubic-bezier(.34,1.56,.64,1)}
-@keyframes popIn{from{opacity:0;transform:scale(.88) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}
-.pop-ico{font-size:3rem;margin-bottom:.6rem}
-.popup-box h2{font-family:"Playfair Display",serif;font-size:1.4rem;color:var(--escuro);margin-bottom:.5rem}
-.popup-aluno{font-size:.85rem;color:var(--medio);margin-bottom:.4rem}
-.popup-resp{font-size:3.6rem;font-weight:900;line-height:1;font-family:"Playfair Display",serif;color:var(--teal)}
-.popup-resp span{font-size:1.4rem;color:var(--medio);font-weight:400}
-.popup-sub{font-size:.82rem;color:var(--medio);margin:.3rem 0 .5rem}
-.popup-diss{font-size:.78rem;color:var(--medio);margin:.1rem 0 .9rem}
-.popup-msg{font-size:.95rem;font-weight:600;color:var(--azul);margin:.3rem 0 1.4rem}
-.popup-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-.pbtn-pdf{padding:.72rem 1.6rem;border-radius:50px;font-size:.88rem;font-family:"Source Serif 4",serif;font-weight:600;cursor:pointer;border:none;background:var(--azul);color:white;box-shadow:0 6px 20px rgba(26,107,138,.35);transition:all .2s}
-.pbtn-pdf:hover{transform:translateY(-2px);background:#155d7a}
-.pbtn-restart{background:white;color:var(--teal);border:2px solid var(--teal);padding:.72rem 1.6rem;border-radius:50px;font-size:.88rem;font-family:"Source Serif 4",serif;font-weight:600;cursor:pointer;transition:all .2s}
-.pbtn-restart:hover{background:var(--teal);color:white}
-
-/* ── PDF OVERLAY ── */
-#pdf-overlay{position:fixed;inset:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:center;justify-content:center}
-.pdf-box{background:white;border-radius:16px;padding:44px 52px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.35);max-width:380px;width:90%}
-.pdf-box .ico{font-size:2.8rem;margin-bottom:12px}
-.pdf-box h4{font-family:"Playfair Display",serif;font-size:1.25rem;font-weight:700;margin-bottom:8px;color:var(--escuro)}
-.pdf-box p{color:#666;font-size:.87rem;margin-bottom:4px}
-#pdf-prog-wrap{height:6px;background:#e8e8f0;border-radius:4px;margin-top:18px;overflow:hidden}
-#pdf-prog{height:6px;background:var(--azul);border-radius:4px;width:0%;transition:width .3s}
-#pdf-prog-txt{font-size:.76rem;color:#888;margin-top:6px;font-family:"JetBrains Mono",monospace}
-@keyframes spin{to{transform:rotate(360deg)}}
-.pdf-spin{width:40px;height:40px;border:4px solid #e8e8f0;border-top-color:var(--azul);border-radius:50%;animation:spin .8s linear infinite;margin:14px auto 0}
-
-/* ── TOAST AVISO COLAR ── */
-#toast-colar{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--vermelho);color:#fff;font-family:"Source Serif 4",serif;font-size:.85rem;font-weight:600;padding:12px 22px;border-radius:30px;box-shadow:0 8px 28px rgba(214,69,69,.4);z-index:9500;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;max-width:90vw;text-align:center}
-#toast-colar.show{opacity:1;transform:translateX(-50%) translateY(0)}
-
-@media(max-width:640px){
-  .cbox{padding:30px 22px}
-  .cbox-titulo{font-size:1.6rem}
-  .container{padding:1rem 1rem 60px}
-  .textos-card,.q-card{padding:20px 16px}
-  .sec-head .sec-txt{font-size:1rem}
+.topo{
+  background:var(--branco);border-bottom:1px solid var(--linha);
+  padding:14px 22px;position:sticky;top:0;z-index:20;
 }
+.topo-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.trilha{font-size:.82rem;color:var(--tinta-suave)}
+.trilha a{color:var(--azul-claro);text-decoration:none;font-weight:600}
+.trilha a:hover{text-decoration:underline}
+.medalhao-mini{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.1em;
+  color:var(--bronze);border:1px solid var(--linha);border-radius:999px;padding:4px 12px;background:var(--sepia)}
+
+header.hero-claro{
+  max-width:var(--max);margin:0 auto;padding:46px 22px 18px;text-align:left;
+}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--bronze);margin-bottom:14px}
+.hero-claro h1{font-size:clamp(1.7rem,4.5vw,2.6rem);font-weight:900;margin-bottom:12px}
+.hero-claro .sub{font-size:1.03rem;color:var(--tinta-suave);font-style:italic;max-width:700px}
+.habilidade-box{margin:26px 0 0;background:var(--sepia);
+  border-left:4px solid var(--bronze);border-radius:0 10px 10px 0;padding:16px 20px;
+  font-size:.94rem;color:var(--tinta)}
+.habilidade-box strong{color:var(--azul)}
+
+main{max-width:var(--max);margin:0 auto;padding:6px 22px 80px}
+section{margin-top:42px}
+.sec-titulo{font-size:1.5rem;margin-bottom:6px;padding-bottom:8px;
+  border-bottom:3px solid var(--bronze);display:inline-block}
+.sec-intro{color:var(--tinta-suave);margin:12px 0 20px;font-size:.98rem}
+
+.objetivos{background:var(--branco);border:1px solid var(--linha);border-radius:var(--raio);
+  padding:22px 26px;box-shadow:var(--sombra)}
+.objetivos ul{list-style:none}
+.objetivos li{padding-left:30px;position:relative;margin-bottom:11px;font-size:.98rem}
+.objetivos li::before{content:"";position:absolute;left:0;top:11px;width:14px;height:3px;
+  background:var(--bronze);border-radius:2px}
+
+/* SUMARIO */
+.sumario-lista{display:grid;gap:12px;margin-top:6px}
+.sumario-item{display:flex;align-items:flex-start;gap:16px;background:var(--branco);
+  border:1px solid var(--linha);border-radius:var(--raio);padding:16px 20px;
+  text-decoration:none;color:var(--tinta);box-shadow:var(--sombra);transition:transform .15s,box-shadow .15s}
+.sumario-item:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(29,60,71,.14)}
+.sumario-num{font-family:'JetBrains Mono',monospace;font-size:.95rem;color:#fff;background:var(--azul);
+  min-width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;font-weight:700}
+.sumario-texto h3{font-size:1.08rem;margin-bottom:4px;color:var(--azul)}
+.sumario-texto p{font-size:.9rem;color:var(--tinta-suave);margin:0;text-align:left}
+
+/* CAIXAS DE CONTEUDO */
+.definicao{background:var(--sepia);border-left:5px solid var(--bronze);border-radius:0 10px 10px 0;
+  padding:16px 20px;margin:18px 0;font-size:.97rem}
+.definicao strong{color:var(--azul)}
+.apoio{background:var(--branco);border:1px solid var(--linha);border-top:4px solid var(--azul-claro);
+  border-radius:var(--raio);padding:18px 22px;margin:20px 0;box-shadow:var(--sombra)}
+.apoio .rotulo{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--bronze);display:block;margin-bottom:6px}
+.apoio h4{font-size:1.02rem;margin-bottom:8px}
+.apoio p{font-size:.95rem}
+.apoio p:last-child{margin-bottom:0}
+.apoio .ref{font-size:.78rem;color:#8b7f74;border-top:1px dashed var(--linha);padding-top:8px;margin-top:4px;text-align:left}
+.citacao{border-left:3px solid var(--linha);padding:4px 0 4px 18px;margin:18px 0;
+  font-style:italic;color:var(--tinta-suave);font-size:.96rem}
+.citacao cite{display:block;font-style:normal;font-size:.78rem;margin-top:8px;color:#8b7f74}
+.pesquise{background:var(--azul);color:#e7eef0;border-radius:var(--raio);padding:20px 22px;margin:22px 0}
+.pesquise h4{color:var(--bronze-claro);font-size:1rem;margin-bottom:8px}
+.pesquise p{font-size:.93rem;color:#dbe4e7;margin-bottom:12px;text-align:left}
+.pesquise a{display:inline-block;background:var(--bronze);color:#1d1a16;text-decoration:none;
+  border-radius:999px;padding:8px 20px;font-weight:600;font-size:.88rem}
+
+.tabela-wrap{overflow-x:auto;margin:20px 0}
+table{border-collapse:collapse;width:100%;font-size:.92rem;background:var(--branco);min-width:480px}
+th,td{border:1px solid var(--linha);padding:11px 13px;text-align:left;vertical-align:top}
+th{background:var(--azul);color:#f2ece2;font-family:'Playfair Display',serif;font-weight:600}
+tbody tr:nth-child(even){background:var(--sepia)}
+
+.roteiro{counter-reset:passo;display:grid;gap:12px;margin-top:6px}
+.passo{background:var(--branco);border:1px solid var(--linha);border-radius:var(--raio);
+  padding:18px 22px 18px 64px;position:relative;box-shadow:var(--sombra)}
+.passo::before{counter-increment:passo;content:counter(passo);position:absolute;left:20px;top:18px;
+  width:30px;height:30px;border-radius:50%;background:var(--azul);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'JetBrains Mono',monospace;font-size:.85rem}
+.passo h4{font-size:1rem;margin-bottom:4px}
+.passo p{font-size:.93rem;color:var(--tinta-suave)}
+
+/* NAV DE RODAPE ENTRE TOPICOS */
+.nav-topicos{display:flex;justify-content:space-between;gap:14px;margin-top:52px;flex-wrap:wrap}
+.nav-topicos a{flex:1;min-width:200px;background:var(--branco);border:1px solid var(--linha);
+  border-radius:var(--raio);padding:16px 20px;text-decoration:none;color:var(--tinta);box-shadow:var(--sombra)}
+.nav-topicos a:hover{background:var(--sepia)}
+.nav-topicos .rotulo-nav{display:block;font-family:'JetBrains Mono',monospace;font-size:.66rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--bronze);margin-bottom:6px}
+.nav-topicos .prox{text-align:right}
+
+footer{background:var(--sepia);border-top:1px solid var(--linha);color:var(--tinta-suave);
+  padding:30px 22px;text-align:center;font-size:.85rem;margin-top:40px}
+footer a{color:var(--azul-claro)}
+
+@media (max-width:640px){
+  body{font-size:16px}
+  main{padding:0 16px 60px}
+  .hero-claro{padding:34px 16px 14px}
+  .passo{padding:16px 16px 16px 56px}
+  .nav-topicos .prox{text-align:left}
+}
+
 </style>
 </head>
-<body oncontextmenu="return false">
-
-<!-- ══ CAPA ══ -->
-<div id="capa">
-  <div class="cbox">
-    <div class="cbox-titulo">A Antiguidade<br>Clássica</div>
-    <div class="cbox-sub">Moral e Ética · O Escravismo na Grécia e em Roma</div>
-    <div class="cbox-disc">Ciências Humanas · História · 1ª Série do Ensino Médio</div>
-    <div class="chips">
-      <span class="chip">Texto de apoio</span>
-      <span class="chip">20 objetivas</span>
-      <span class="chip">10 dissertativas</span>
-      <span class="chip">PDF ao finalizar</span>
-    </div>
-    <label class="campo-label" for="cnome">Nome completo do aluno(a)</label>
-    <input type="text" id="cnome" class="campo-nome" placeholder="Digite seu nome completo aqui…"
-      autocomplete="off" oninput="chkNome()" onkeydown="if(event.key==='Enter')iniciar()">
-    <button class="btn-start" id="bstart" onclick="iniciar()" disabled>Iniciar Atividade →</button>
-    <p class="capa-note">Leia o texto de apoio, marque a alternativa correta nas 20 objetivas e responda às 10 dissertativas (mínimo de 60 caracteres cada).</p>
+<body>
+<nav class="topo">
+  <div class="topo-inner">
+    <div class="trilha">Ciências Humanas e Sociais Aplicadas</div>
+    <div class="medalhao-mini">EM13CHS104</div>
   </div>
-  <div class="seduc-bar">Colégio Estadual Rodolfo de Oliveira · Goiás · 2026</div>
-</div>
-
-<!-- ══ CONTEÚDO ══ -->
-<div id="conteudo">
-  <div class="hdr-top">
-    <div class="hdr-nome">Aluno(a): <span id="hdr-nome">—</span></div>
-    <div class="hdr-prog">Respondidas: <span id="hdr-resp">0</span> / 30</div>
+</nav>
+<header class="hero-claro">
+  <p class="eyebrow">Colégio Estadual Rodolfo de Oliveira &middot; 1ª série do Ensino Médio</p>
+  <h1>Cultura Material e Imaterial</h1>
+  <p class="sub">O que os objetos e os vestígios revelam sobre conhecimentos, valores, crenças e práticas das sociedades no tempo e no espaço.</p>
+  <div class="habilidade-box">
+    <strong>Habilidade EM13CHS104:</strong> Analisar objetos e vestígios da cultura material e imaterial de modo a identificar conhecimentos, valores, crenças e práticas que caracterizam a identidade e a diversidade cultural de diferentes sociedades inseridas no tempo e no espaço.
   </div>
-  <div class="bprog-wrap"><div class="bprog" id="bprog"></div></div>
+</header>
 
-  <div class="container">
-
-    <!-- ══ TEXTO DE APOIO ══ -->
-    <div class="textos-card">
-      <div class="textos-title">A Antiguidade Clássica: Moral, Ética e Escravismo</div>
-      <div class="textos-sub">Texto didático adaptado dos materiais de aula · História / Filosofia · 1ª Série do Ensino Médio · Prof. Claudio Alencar</div>
-
-      <p class="intro-p">Leia com atenção os três temas a seguir antes de responder. Eles tratam do nascimento da reflexão ética na Grécia e do escravismo como sistema econômico hegemônico no mundo greco-romano — assuntos que continuam a nos fazer pensar sobre justiça, costume e dignidade humana.</p>
-
-      <div class="divider"></div>
-
-      <div class="texto-bloco">
-        <div class="texto-hdr">Tema 1 · Moral e Ética: da Grécia à reflexão filosófica</div>
-        <div class="texto-corpo">No dia a dia, "imoral" e "antiético" parecem sinônimos, mas a Filosofia os distingue. A palavra <em>moral</em> vem do latim <em>mos</em> (plural <em>mores</em>), que significa "costume"; o termo foi empregado pelo pensador romano Cícero (106–43 a.C.) para traduzir uma ideia grega. A moral é o conjunto de regras e costumes que uma sociedade aceita em determinada época — o que considera certo ou errado — e por isso é <em>particular</em> (varia de lugar para lugar) e <em>histórica</em> (muda com o tempo). Já a palavra <em>ética</em> vem do grego <em>êthos</em>, que reúne dois sentidos: "morada" (o lugar onde convivemos) e "caráter" (o modo de ser que construímos). A ética não se limita a descrever os costumes: ela os questiona — pergunta "por que agimos assim?", "essa regra é justa?", "poderíamos agir de forma melhor?".</div>
-        <div class="texto-corpo">A história mostra que nem tudo o que era moralmente aceito era justo: a escravidão, por exemplo, foi considerada normal por séculos. O <em>senso moral</em> ("fazer o que todo mundo faz") nem sempre basta; é preciso dar o passo seguinte — a <em>reflexão ética</em> —, examinando os hábitos à luz da razão, da justiça e da dignidade. Foi na Antiguidade Clássica que isso ocorreu de modo sistemático: Sócrates ensinava que o autoconhecimento é a base da boa conduta; Platão buscou definir a ideia de bem; e Aristóteles investigou as virtudes de uma vida plena, defendendo que a virtude se aprende pela prática.</div>
-        <span class="texto-ref">Adaptado de: Material GO-EMCHS501A — Moral e Ética na História da Filosofia. Ensino Médio, CHSA.</span>
-      </div>
-
-      <div class="texto-bloco">
-        <div class="texto-hdr">Tema 2 · O escravismo na Grécia</div>
-        <div class="texto-corpo">O termo "Antiguidade Clássica" foi cunhado pelos humanistas do Renascimento (séculos XV e XVI), que viam nos valores greco-latinos a gênese do mundo ocidental; "clássico", do latim, associa-se à excelência e ao modelo a seguir. A história grega divide-se em cinco períodos: <em>Creto-Micênico</em> (2000–1200 a.C.), <em>Homérico</em> (séc. XII–VIII a.C., com os genos), <em>Arcaico</em> (séc. VIII–VI a.C., surgimento da pólis e expansão colonial), <em>Clássico</em> (séc. V–IV a.C., cidadania e democracia, Guerras Médicas e Guerra do Peloponeso, hegemonia do escravismo) e <em>Helenístico</em> (338–146 a.C., domínio macedônico, encerrado pela dominação romana).</div>
-        <div class="texto-corpo">A pólis é um pequeno Estado soberano que reúne a cidade e o campo ao redor; conforme P. P. A. Funari, ela se define pelo <em>demos</em> (o povo). A expansão colonial trouxe comércio, economia monetária (o dracma), uma nova classe de comerciantes que rivalizava com os <em>eupátridas</em> e reformas que levaram à democracia em Atenas. Nesse processo, o trabalho manual passou a ser desprezado pelos homens livres, e a escravidão tornou-se a forma de trabalho hegemônica — a liberdade do cidadão tornou-se indissociável da massa escrava que sustentava a produção.</div>
-        <div class="texto-cit">"O privilégio do homem livre não é a liberdade, mas a ociosidade, que tem por complemento o trabalho forçado dos outros, isto é, a escravatura." (Platão)</div>
-        <span class="texto-ref">Adaptado de: O Escravismo na Antiguidade Clássica — Grécia. FUNARI, P. P. A. <em>Grécia e Roma</em>. São Paulo: Contexto, 2001, p. 25. Cf. Perry Anderson.</span>
-      </div>
-
-      <div class="texto-bloco">
-        <div class="texto-hdr">Tema 3 · O escravismo em Roma</div>
-        <div class="texto-corpo">Da fundação mítica (753 a.C., atribuída a Rômulo e Remo) à queda do Império do Ocidente (476 d.C., quando Rômulo Augusto foi deposto por Odoacro), a trajetória de Roma é marcada pela interdependência entre expansão militar e escravismo. A história romana divide-se em <em>Monarquia</em> (753–509 a.C., economia agropastoril, patrícios e plebeus), <em>República</em> (509–27 a.C., poder no Senado, nas Assembleias e nas Magistraturas; conquistas da plebe como a Lei das Doze Tábuas de 450 a.C., base do Direito Romano, a Lei Canuléia de 445 a.C. e a Lei Licínia de 367 a.C.) e <em>Império</em> (27 a.C.–476 d.C., com o apogeu da Pax Romana e, depois, a crise do Baixo Império).</div>
-        <div class="texto-corpo">O escravo era juridicamente uma propriedade ou "instrumento" do senhor. Suas origens principais eram a guerra (a mais importante), o endividamento, a descendência e o abandono/pobreza. Os escravos atuavam no trabalho pesado (agricultura, mineração, obras), em funções domésticas e especializadas (secretários, músicos, professores gregos) e no entretenimento (gladiadores). A Revolta de Espártaco (73 a.C.), liderada por um gladiador, tornou-se símbolo de resistência. A expansão (Guerras Púnicas contra Cartago) gerou afluxo de riquezas, latifúndios, ruína do pequeno proprietário, êxodo rural e a política de "pão e circo". A partir do século II d.C., o fim das conquistas reduziu o número de escravos e a produção, levando à ruralização e à substituição do escravismo pelo <em>colonato</em>, processo que culminou no colapso do Império. Roma deixou como legado o Direito Romano, a arquitetura, o latim (Cícero, Ovídio) e a transição para o Cristianismo.</div>
-        <span class="texto-ref">Adaptado de: Tema 3 — O Escravismo na Antiguidade Clássica — Roma. Cf. Paul Veyne; Floro.</span>
-      </div>
-
+<main>
+  <section id="objetivos">
+    <h2 class="sec-titulo">Objetivos de aprendizagem</h2>
+    <p class="sec-intro">Este material organiza o conteúdo necessário para desenvolver a habilidade. Ao final da leitura, você deverá ser capaz de:</p>
+    <div class="objetivos">
+      <ul>
+        <li>Definir cultura como conjunto de conhecimentos, crenças, normas, técnicas e expressões produzidos e transmitidos socialmente.</li>
+        <li>Diferenciar etnocentrismo de relativismo cultural e reconhecer os efeitos históricos de cada postura.</li>
+        <li>Distinguir os elementos materiais dos elementos simbólicos de uma cultura, compreendendo que ambos são inseparáveis na prática.</li>
+        <li>Reconhecer o objeto e o vestígio como fontes históricas, capazes de informar sobre grupos que não deixaram registro escrito.</li>
+        <li>Relacionar sítios arqueológicos e bens registrados no Brasil às noções de patrimônio cultural, memória e identidade.</li>
+        <li>Identificar as matrizes indígenas, africanas e europeias na formação da diversidade cultural brasileira, evitando generalizações.</li>
+        <li>Descrever o procedimento de análise de um objeto ou vestígio da cultura material e imaterial.</li>
+      </ul>
     </div>
+  </section>
 
-    <!-- ══ AVISO ══ -->
-    <div id="alerta-incompleto">
-      ⚠️ Atividade incompleta. Faltam <strong id="qtd-faltando"></strong> resposta(s).
-      Marque todas as objetivas e responda às dissertativas (mín. 60 caracteres) antes de finalizar.
+  <section id="sumario">
+    <h2 class="sec-titulo">Sumário</h2>
+    <p class="sec-intro">O conteúdo está organizado em 9 tópicos. Clique em cada um para abrir a página correspondente.</p>
+    <div class="sumario-lista">
+  <a class="sumario-item" href="topico-1.html">
+    <div class="sumario-num">1</div>
+    <div class="sumario-texto"><h3>O que é cultura?</h3><p>O estranhamento diante do diferente e o conceito de cultura como conjunto de conhecimentos, crenças e hábitos compartilhados.</p></div>
+  </a>
+  <a class="sumario-item" href="topico-2.html">
+    <div class="sumario-num">2</div>
+    <div class="sumario-texto"><h3>Etnocentrismo e relativismo cultural</h3><p>A diferença entre julgar outras culturas pelo próprio padrão (etnocentrismo) e interpretá-las em seu contexto (relativismo).</p></div>
+  </a>
+  <a class="sumario-item" href="topico-3.html">
+    <div class="sumario-num">3</div>
+    <div class="sumario-texto"><h3>Cultura material: os objetos como documentos</h3><p>Objetos, ferramentas e utensílios como documentos que revelam técnica, recursos e relações sociais de um grupo.</p></div>
+  </a>
+  <a class="sumario-item" href="topico-4.html">
+    <div class="sumario-num">4</div>
+    <div class="sumario-texto"><h3>Cultura imaterial: saberes, celebrações e formas de expressão</h3><p>Saberes, celebrações, formas de expressão e lugares: os significados que dão sentido à vida coletiva.</p></div>
+  </a>
+  <a class="sumario-item" href="topico-5.html">
+    <div class="sumario-num">5</div>
+    <div class="sumario-texto"><h3>Vestígios e arqueologia: o Brasil antes de 1500</h3><p>Serra da Capivara, Lagoa Santa, sambaquis e geoglifos: o que os vestígios revelam sobre o Brasil antes de 1500.</p></div>
+  </a>
+  <a class="sumario-item" href="topico-6.html">
+    <div class="sumario-num">6</div>
+    <div class="sumario-texto"><h3>Patrimônio cultural: tombar, registrar, preservar</h3><p>Tombamento e registro: como o Estado reconhece e protege bens materiais e imateriais no Brasil.</p></div>
+  </a>
+  <a class="sumario-item" href="topico-7.html">
+    <div class="sumario-num">7</div>
+    <div class="sumario-texto"><h3>Ameaças ao patrimônio e educação patrimonial</h3><p>Desmatamento, obras e legislação: os riscos que ameaçam sítios e práticas culturais, e o papel da educação patrimonial.</p></div>
+  </a>
+  <a class="sumario-item" href="topico-8.html">
+    <div class="sumario-num">8</div>
+    <div class="sumario-texto"><h3>Identidade e diversidade cultural brasileira</h3><p>As matrizes indígena, africana e europeia na formação cultural brasileira, e a agência dos grupos historicamente oprimidos.</p></div>
+  </a>
+  <a class="sumario-item" href="topico-9.html">
+    <div class="sumario-num">9</div>
+    <div class="sumario-texto"><h3>Roteiro de análise de um objeto ou vestígio</h3><p>Sete etapas para transformar qualquer objeto ou vestígio em fonte histórica.</p></div>
+  </a>
     </div>
-
-    <!-- ══ PARTE 1 — OBJETIVAS ══ -->
-    <div class="sec-head">
-      <span class="sec-tag">PARTE 1</span>
-      <span class="sec-txt">Questões Objetivas (1 a 20)</span>
-      <span class="sec-line"></span>
-    </div>
-    <div id="questoes-obj"></div>
-
-    <!-- ══ PARTE 2 — DISSERTATIVAS ══ -->
-    <div class="sec-head">
-      <span class="sec-tag">PARTE 2</span>
-      <span class="sec-txt">Questões Dissertativas (21 a 30)</span>
-      <span class="sec-line"></span>
-    </div>
-    <div id="questoes-diss"></div>
-
-    <div class="btn-enviar-wrap">
-      <button class="btn-enviar" onclick="tentarFinalizar()">✓ Finalizar e corrigir</button>
-    </div>
-
-  </div>
-</div>
-
-<!-- ══ POPUP RESULTADO ══ -->
-<div id="popup-resultado">
-  <div class="popup-box">
-    <div class="pop-ico" id="pop-ico">🎯</div>
-    <h2>Atividade Finalizada!</h2>
-    <p class="popup-aluno" id="pop-aluno"></p>
-    <div class="popup-resp" id="pop-resp"></div>
-    <p class="popup-sub" id="pop-sub"></p>
-    <p class="popup-diss" id="pop-diss"></p>
-    <p class="popup-msg" id="pop-msg"></p>
-    <div class="popup-btns">
-      <button class="pbtn-pdf" onclick="fecharPopupEBaixar()">📥 Baixar PDF (gabarito + respostas)</button>
-      <button class="pbtn-restart" onclick="location.reload()">↺ Refazer</button>
-    </div>
-  </div>
-</div>
-
-<script>
-const TOTAL_OBJ = 20, TOTAL_DISS = 10, TOTAL = 30;
-const MIN_CHARS = 60;
-const LETRAS = ['A','B','C','D','E'];
-let nome = '';
-let respMC = {};       // num -> índice marcado
-let corrigido = false;
-
-function esc(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
-
-const QUIZ = [
-  { num:1, enunc:'A palavra "moral" tem uma origem etimológica que ajuda a compreender seu sentido filosófico. Assinale a alternativa correta.',
-    alts:[
-      'Vem do grego êthos, que significa exclusivamente "caráter", e teria sido cunhada pelo filósofo Aristóteles em sua juventude.',
-      'Vem do latim mos (plural mores), que significa "costume", e foi empregada por Cícero para traduzir uma ideia grega.',
-      'Vem do latim virtus, que significa "força" ou "coragem", e designava todo o conjunto das leis escritas de uma cidade.',
-      'Vem do grego pólis, que significa "cidade", e teria sido criada por Platão para nomear a vida em comunidade política.',
-      'Não possui origem etimológica definida, tendo surgido somente na Idade Moderna com os pensadores iluministas franceses.'
-    ], correta:1, coment:'"Moral" vem do latim mos/mores (costume); o termo foi empregado por Cícero (Tema 1).' },
-
-  { num:2, enunc:'Sobre a origem e o sentido da palavra "ética", é correto afirmar que ela:',
-    alts:[
-      'Vem do latim mos e significa apenas "lei escrita", aquela que era imposta pela autoridade política da cidade-estado.',
-      'Surgiu na cidade de Roma, no tempo do filósofo Cícero, como um sinônimo perfeito e intercambiável da palavra "moral".',
-      'Designa o conjunto fixo dos costumes de um povo, costumes esses que jamais poderiam ser questionados pela razão humana.',
-      'Vem do grego êthos, que reúne os sentidos de "morada" (lugar onde convivemos) e "caráter" (modo de ser).',
-      'Foi criada pelo romano Cícero para substituir a antiga palavra "virtude", então caída em desuso entre os gregos.'
-    ], correta:3, coment:'"Ética" vem do grego êthos, com os sentidos de morada e caráter (Tema 1).' },
-
-  { num:3, enunc:'Embora no cotidiano "moral" e "ética" pareçam sinônimos, a Filosofia os distingue. Qual alternativa expressa corretamente essa diferença?',
-    alts:[
-      'A moral descreve e segue os costumes de uma sociedade; a ética reflete sobre eles, perguntando se são justos.',
-      'A moral é uma ciência exata e plenamente demonstrável, ao passo que a ética não passa de um ramo da prática religiosa.',
-      'A ética se limita a obedecer cegamente a todas as leis, enquanto a moral existe justamente para poder desrespeitá-las.',
-      'A moral é totalmente universal e imutável; já a ética seria aquilo que muda conforme o país e a época histórica.',
-      'Não existe diferença alguma entre os dois conceitos, sendo apenas duas palavras distintas para nomear a mesma coisa.'
-    ], correta:0, coment:'A moral segue/descreve costumes; a ética os questiona à luz da razão e da justiça (Tema 1).' },
-
-  { num:4, enunc:'O texto afirma que "o senso moral nem sempre é suficiente". Essa ideia significa que:',
-    alts:[
-      'Significa que devemos sempre fazer exatamente aquilo que a maioria absoluta das pessoas faz, sem jamais abrir qualquer tipo de exceção.',
-      'Significa que os costumes adotados por uma sociedade são, por definição, sempre justos e moralmente corretos.',
-      'Significa que fazer "o que todo mundo faz" nem sempre é justo: é preciso examinar os hábitos à luz da razão e da dignidade.',
-      'Significa que a reflexão ética deve ser sempre abandonada em favor da força e da tradição do costume já estabelecido.',
-      'Significa que as leis e os costumes de cada época são definitivos e jamais devem ser revistos pelas gerações futuras.'
-    ], correta:2, coment:'O senso moral (seguir o costume) nem sempre é justo; é preciso a reflexão ética (Tema 1).' },
-
-  { num:5, enunc:'Relacione corretamente os filósofos da Antiguidade Clássica às suas contribuições para a ética.',
-    alts:[
-      'Sócrates teria definido a ideia de bem, Platão investigou todas as virtudes humanas e Aristóteles negou valor à ética.',
-      'Os três grandes filósofos defenderam abertamente, em diversas de suas obras, que a escravidão era uma instituição injusta.',
-      'Aristóteles foi quem ensinou o autoconhecimento, Sócrates teria fundado a pólis e Platão pregou a abolição dos costumes.',
-      'Nenhum dos três filósofos chegou a se ocupar de questões éticas, dedicando-se unicamente à matemática e à astronomia.',
-      'Sócrates ensinava que o autoconhecimento é a base da boa conduta; Platão buscou a ideia de bem; Aristóteles, as virtudes.'
-    ], correta:4, coment:'Sócrates (autoconhecimento), Platão (ideia de bem), Aristóteles (virtudes) — Tema 1.' },
-
-  { num:6, enunc:'Ao afirmar que a moral é "particular" e "histórica", o texto quer dizer que ela:',
-    alts:[
-      'Que ela é exatamente igual em absolutamente todas as sociedades humanas e jamais sofre qualquer tipo de mudança.',
-      'Que ela varia de uma cultura para outra (particular) e se transforma ao longo do tempo (histórica).',
-      'Que ela foi criada de uma vez por todas pelos antigos filósofos da Grécia, sem qualquer alteração posterior na história.',
-      'Que ela depende exclusivamente das leis da natureza, e nunca das escolhas e dos costumes construídos pelos seres humanos.',
-      'Que ela não guarda qualquer relação com os costumes de um povo, sendo apenas fruto direto da sua tradição religiosa.'
-    ], correta:1, coment:'A moral é particular (varia no espaço) e histórica (muda no tempo) — Tema 1.' },
-
-  { num:7, enunc:'O conceito de "Antiguidade Clássica" possui uma origem histórica precisa. Assinale a alternativa correta.',
-    alts:[
-      'Foi criado pelos próprios gregos antigos, ainda durante o Período Homérico, com o objetivo de exaltar a sua cultura.',
-      'Surgiu na Idade Média, formulado pela Igreja Católica com o objetivo expresso de condenar a cultura pagã da Antiguidade.',
-      'Foi proposto apenas no século XIX, por um grupo de arqueólogos alemães que escavavam os antigos sítios da Grécia.',
-      'Foi cunhado pelos humanistas do Renascimento (séc. XV–XVI), que viam nos valores greco-latinos a gênese do Ocidente.',
-      'É um sinônimo da palavra "pré-história" e designa todo o longo período anterior à invenção da escrita pela humanidade.'
-    ], correta:3, coment:'O termo foi cunhado pelos humanistas do Renascimento (Tema 2).' },
-
-  { num:8, enunc:'Considere a periodização da história grega. Qual associação entre período e característica está CORRETA?',
-    alts:[
-      'No Período Arcaico (séc. VIII–VI a.C.) surge a pólis, com autonomia política, e ocorre a expansão colonial.',
-      'No Período Creto-Micênico (2000–1200 a.C.) a democracia ateniense já se encontrava completamente consolidada e estável.',
-      'O Período Homérico (séc. XII–VIII a.C.) foi inteiramente marcado pela dominação macedônica e pela fusão cultural oriental.',
-      'O Período Helenístico (338–146 a.C.) antecede e dá origem ao surgimento dos primeiros genos da sociedade grega antiga.',
-      'No Período Clássico (séc. V–IV a.C.) não existia ainda nenhuma forma de trabalho escravo dentro da sociedade grega.'
-    ], correta:0, coment:'No Período Arcaico surge a pólis e ocorre a expansão colonial (Tema 2).' },
-
-  { num:9, enunc:'Segundo o historiador P. P. A. Funari, qual elemento define essencialmente a pólis grega?',
-    alts:[
-      'O território militar que foi conquistado por meio das guerras e que era protegido por grandes muralhas de pedra.',
-      'A existência de um rei absoluto e hereditário, que governava sozinho tanto a cidade quanto todo o campo ao redor.',
-      'O demos (o povo) — coletividade submetida aos mesmos costumes e unida por um culto comum às divindades protetoras.',
-      'A ausência completa de qualquer tipo de religião ou de culto que fosse compartilhado entre os seus diversos habitantes.',
-      'A presença sempre obrigatória de colônias estrangeiras encarregadas de administrar toda a vida política da cidade.'
-    ], correta:2, coment:'Para Funari, a pólis define-se pelo demos, o povo (Tema 2).' },
-
-  { num:10, enunc:'A expansão colonial grega pelo Mediterrâneo provocou transformações socioeconômicas profundas. Entre elas está:',
-    alts:[
-      'O fim completo do comércio marítimo grego e o retorno generalizado de toda a economia ao antigo sistema de escambo.',
-      'A extinção total da aristocracia rural grega e o desaparecimento definitivo dos antigos e poderosos eupátridas.',
-      'A proibição do uso de qualquer moeda e o controle estatal absoluto sobre toda a produção agrícola das colônias.',
-      'A concentração de todo o poder político e também econômico nas mãos exclusivas dos antigos invasores dórios do norte.',
-      'A economia monetária (o dracma) e uma classe de comerciantes que rivalizava com os eupátridas, base da democracia.'
-    ], correta:4, coment:'A expansão trouxe moeda (dracma), nova classe de comerciantes e a democracia ateniense (Tema 2).' },
-
-  { num:11, enunc:'Sobre o sistema escravista grego no Período Clássico, é correto afirmar que:',
-    alts:[
-      'A escravidão tornou-se a forma de trabalho hegemônica, pois o trabalho manual passou a ser desprezado pelos livres.',
-      'A escravidão foi total e completamente abolida pela democracia ateniense logo no início do Período Clássico grego.',
-      'Os cidadãos gregos, de modo geral, preferiam realizar o pesado trabalho manual à vida marcada pela ociosidade e pelo ócio.',
-      'Os escravos gregos possuíam exatamente os mesmos direitos políticos e civis que eram garantidos a todos os cidadãos livres.',
-      'A escravidão existia somente na cidade-estado de Esparta, jamais tendo sido praticada na cidade-estado de Atenas.'
-    ], correta:0, coment:'No Período Clássico a escravidão tornou-se hegemônica; a liberdade do cidadão dependia da massa escrava (Tema 2).' },
-
-  { num:12, enunc:'Platão afirmou: "O privilégio do homem livre não é a liberdade, mas a ociosidade, que tem por complemento o trabalho forçado dos outros, isto é, a escravatura." A interpretação mais adequada é:',
-    alts:[
-      'Que Platão, na verdade, defendia abertamente a abolição imediata e completa de toda e qualquer forma de escravidão.',
-      'Que, para Platão, o trabalho forçado realizado pelos escravos era totalmente desnecessário à vida em sociedade.',
-      'Que a condição privilegiada (a ociosidade) do cidadão livre dependia diretamente do trabalho forçado dos escravos.',
-      'Que a liberdade do cidadão e a escravidão dos cativos não guardavam, entre si, nenhuma relação de dependência.',
-      'Que os homens livres, na prática cotidiana, trabalhavam muito mais arduamente do que os próprios escravos da cidade.'
-    ], correta:2, coment:'A frase revela que a ociosidade do cidadão dependia do trabalho escravo (Tema 2).' },
-
-  { num:13, enunc:'O historiador Perry Anderson faz uma observação importante sobre a escravidão antiga. Qual é ela?',
-    alts:[
-      'Que a escravidão jamais teria existido em qualquer outra sociedade humana situada fora da Grécia e da Roma da Antiguidade.',
-      'Que, existindo em várias sociedades antigas, só na Grécia e em Roma ela virou o sistema de trabalho dominante.',
-      'Que a escravidão antiga foi sempre muito mais branda na Grécia antiga do que em qualquer outra civilização do mundo.',
-      'Que a escravidão grega se baseava única e exclusivamente no endividamento dos cidadãos considerados mais pobres da cidade.',
-      'Que a escravidão antiga teria desaparecido por completo justamente durante o período de auge do Período Clássico grego.'
-    ], correta:1, coment:'Perry Anderson: só na Grécia e em Roma a escravidão se tornou sistema dominante (Tema 2).' },
-
-  { num:14, enunc:'Sobre a organização política da República Romana (509–27 a.C.), é correto afirmar que o poder:',
-    alts:[
-      'Concentrava-se exclusivamente nas mãos de um único imperador, dotado de poderes absolutos, perpétuos e vitalícios.',
-      'Pertencia unicamente aos escravos que haviam sido libertados por seus antigos senhores patrícios mais ricos da cidade.',
-      'Era exercido por um único rei, de caráter eletivo e vitalício, dotado de funções tanto militares quanto religiosas.',
-      'Estava nas mãos dos povos "bárbaros" que viviam muito além das fronteiras e que constantemente cercavam a cidade de Roma.',
-      'Distribuía-se entre o Senado, as diversas Assembleias (Curiata, Centuriata e Plebis) e as Magistraturas eleitas.'
-    ], correta:4, coment:'Na República, o poder distribuía-se entre Senado, Assembleias e Magistraturas (Tema 3).' },
-
-  { num:15, enunc:'A trajetória de Roma é tradicionalmente delimitada por dois marcos. Assinale a alternativa correta.',
-    alts:[
-      'Da fundação da República romana, em 509 a.C., até a instauração da Pax Romana do imperador Augusto, em 27 a.C.',
-      'Do início do período da Monarquia, em 450 a.C., até a promulgação da chamada Lei Canuléia, ocorrida em 445 a.C.',
-      'Da proclamação da República romana, em 753 a.C., até o começo do longo período do Império romano, em 27 d.C.',
-      'Da fundação mítica em 753 a.C. (Rômulo e Remo) até a queda do Império do Ocidente, em 476 d.C., com Odoacro.',
-      'Do início do chamado Alto Império, em 476 a.C., até a chegada do período do Baixo Império, por volta de 27 d.C.'
-    ], correta:3, coment:'Roma vai da fundação mítica (753 a.C.) à queda do Ocidente (476 d.C., Odoacro) — Tema 3.' },
-
-  { num:16, enunc:'As conquistas políticas da plebe romana resultaram de longas lutas. Qual associação entre lei e conteúdo está CORRETA?',
-    alts:[
-      'A Lei Licínia, de 367 a.C., foi justamente a responsável por proibir o casamento entre os patrícios e os plebeus.',
-      'A Lei Canuléia, de 445 a.C., foi a que criou e organizou todo o Direito Romano em sua forma definitivamente escrita.',
-      'A Lei das Doze Tábuas, de 450 a.C., estabeleceu os fundamentos do Direito Romano em sua forma escrita.',
-      'A Lei das Doze Tábuas, de 450 a.C., teria banido definitivamente toda a plebe do acesso ao importante cargo de consulado.',
-      'A Lei Canuléia, de 445 a.C., determinou de forma imediata a completa extinção do Senado romano e de todas as suas funções.'
-    ], correta:2, coment:'A Lei das Doze Tábuas (450 a.C.) é a base do Direito Romano (Tema 3).' },
-
-  { num:17, enunc:'Na sociedade romana, qual era a condição jurídica do escravo e suas principais origens?',
-    alts:[
-      'Era propriedade ou "instrumento" do senhor; suas origens eram a guerra (principal), o endividamento e a descendência.',
-      'Era considerado um cidadão de segunda classe, porém com pleno direito de votar em todas as Assembleias romanas da República.',
-      'A única origem possível para a escravidão romana era o nascimento do indivíduo dentro da própria casa do seu senhor.',
-      'Os escravos eram, em sua imensa maioria, antigos senadores que tinham empobrecido durante as longas guerras de Roma.',
-      'A própria lei romana proibia de forma expressa o emprego de mão de obra escrava nas mais diversas atividades agrícolas.'
-    ], correta:0, coment:'O escravo era propriedade/"instrumento"; origens: guerra, endividamento, descendência, abandono (Tema 3).' },
-
-  { num:18, enunc:'A Revolta de Espártaco (73 a.C.) ocupa lugar de destaque na história romana porque:',
-    alts:[
-      'Resultou na abolição totalmente imediata e definitiva da escravidão em todo o vasto território controlado por Roma.',
-      'Foi liderada por um senador patrício que estava profundamente descontente com os rumos políticos tomados pela República.',
-      'Garantiu a todos os escravos sobreviventes da revolta o direito de cidadania e de voto em todas as Assembleias romanas.',
-      'Foi liderada por um gladiador e, embora derrotada e desprezada por cronistas como Floro, virou símbolo de resistência.',
-      'Ocorreu já durante o Baixo Império romano e foi a causa direta e imediata da queda definitiva de Roma, em 476 d.C.'
-    ], correta:3, coment:'Espártaco, gladiador, liderou a revolta de 73 a.C.; tornou-se símbolo de resistência (Tema 3).' },
-
-  { num:19, enunc:'A expansão romana pelo Mediterrâneo (incluindo as Guerras Púnicas contra Cartago) trouxe consequências socioeconômicas. Qual alternativa as descreve corretamente?',
-    alts:[
-      'Promoveu o grande fortalecimento dos pequenos proprietários rurais e o desaparecimento completo de todos os latifúndios.',
-      'Gerou afluxo de riquezas, latifúndios, ruína do pequeno proprietário, êxodo rural e a política de "pão e circo".',
-      'Resultou na distribuição perfeitamente igualitária das terras conquistadas entre todos os camponeses e soldados livres.',
-      'Provocou a imediata e drástica redução do número de escravos e o fim de todas as guerras de conquista de Roma.',
-      'Levou à proibição de todos os grandes espetáculos públicos e ao fim da distribuição de alimentos gratuitos ao povo.'
-    ], correta:1, coment:'A expansão gerou latifúndios, ruína do pequeno proprietário, êxodo rural e "pão e circo" (Tema 3).' },
-
-  { num:20, enunc:'A partir do século II d.C., o fim da expansão territorial desencadeou a crise do sistema escravista romano. Qual alternativa explica corretamente esse processo?',
-    alts:[
-      'O aumento contínuo das guerras de conquista teria gerado um grande excesso de escravos e uma enorme superprodução agrícola.',
-      'O sistema escravista foi pacífica e gradualmente substituído por uma forma bastante avançada de democracia direta e popular.',
-      'O Estado romano tornou-se, justamente nesse período, muito mais rico, centralizado e militarmente fortalecido do que antes.',
-      'Os grandes latifúndios desapareceram por completo e toda a população urbana retornou em massa para as grandes cidades.',
-      'Menos guerras significaram menos escravos e queda na produção; veio a ruralização e a substituição pelo colonato.'
-    ], correta:4, coment:'Sem conquistas, faltaram escravos; veio a ruralização e o colonato (Tema 3).' }
-];
-
-const DISSERT = [
-  { num:21, enunc:'Explique, com suas palavras, a diferença entre moral e ética, recorrendo à origem das palavras (mos e êthos). Em seguida, dê um exemplo do seu cotidiano em que essa diferença fique clara.' },
-  { num:22, enunc:'O texto afirma que a escravidão foi moralmente aceita durante séculos, mas foi superada pela reflexão ética. Relacione esse fato à ideia de que "nenhum costume pode legitimar a desumanização de outro ser humano".' },
-  { num:23, enunc:'Aristóteles defendia que a virtude se aprende pela prática — é agindo com justiça que nos tornamos justos. Você concorda que os bons hábitos formam o caráter? Justifique com um exemplo concreto.' },
-  { num:24, enunc:'Explique o conceito de pólis e o papel do demos, segundo Funari, e relacione essa estrutura ao surgimento da democracia em Atenas.' },
-  { num:25, enunc:'Analise a frase de Platão sobre a ociosidade e o trabalho forçado e explique por que, no Período Clássico, a liberdade do cidadão grego tornou-se "indissociável" da existência de uma massa escrava.' },
-  { num:26, enunc:'Perry Anderson observa que, embora a escravidão existisse em várias sociedades antigas, só na Grécia e em Roma ela se tornou o sistema de trabalho dominante. Discuta o que diferencia o escravismo clássico de outras formas de trabalho escravo.' },
-  { num:27, enunc:'Explique a relação entre as guerras de conquista romanas, a formação dos latifúndios, a ruína do pequeno proprietário e o êxodo rural. Como a política de "pão e circo" se encaixa nesse cenário?' },
-  { num:28, enunc:'A Revolta de Espártaco foi derrotada e seus participantes descritos com desprezo pelos cronistas da época, mas o nome de Espártaco tornou-se símbolo de resistência. Reflita sobre como a História pode ressignificar figuras e acontecimentos do passado.' },
-  { num:29, enunc:'Explique a crise do sistema escravista romano a partir do século II d.C. e a transição para o colonato. Por que o fim da expansão militar desencadeou um "colapso em cadeia"?' },
-  { num:30, enunc:'Imagine-se como um(a) filósofo(a) da Antiguidade (Sócrates, Platão ou Aristóteles) convidado(a) a observar a sua escola em 2026. Escolha um costume atual que você submeteria à reflexão ética, descreva-o e explique qual questionamento ético você faria sobre ele.' }
-];
-
-const COMENTARIOS_D = [
-  'Espera-se a distinção: moral (do latim mos = costume) descreve/segue os costumes aceitos; ética (do grego êthos = morada e caráter) questiona se esses costumes são justos. O exemplo cotidiano deve ilustrar a passagem do "todo mundo faz" para o "isto é justo?".',
-  'Valorizar respostas que percebam que o costume (moral) não é critério suficiente de justiça: a escravidão era aceita, mas a reflexão ética, à luz da razão e da dignidade, concluiu pela sua ilegitimidade. Bom uso da ideia de dignidade humana.',
-  'Resposta argumentativa. Espera-se concordância fundamentada com a tese aristotélica (a virtude como hábito), com um exemplo concreto de prática repetida que formou caráter (disciplina, honestidade, estudo). Aceitar discordância coerente.',
-  'A pólis é um pequeno Estado soberano (cidade + campo) que se define pelo demos (o povo), unido por costumes e culto comuns. Espera-se a ligação entre a centralidade do povo e a participação política que culminou na democracia ateniense.',
-  'Espera-se a interpretação de que a ociosidade do cidadão livre dependia do trabalho forçado dos escravos: liberdade e escravidão eram interdependentes. Valorizar a leitura crítica da frase de Platão.',
-  'Resposta analítica. Diferencial do escravismo clássico: tornou-se o modo de produção dominante (não marginal), sustentando toda a economia e a própria condição de cidadania. Valorizar comparações pertinentes.',
-  'Espera-se a cadeia causal: guerras → afluxo de escravos e riquezas → latifúndios escravistas → ruína do pequeno proprietário (não competia) → êxodo rural → "clientela urbana" → "pão e circo" para conter o descontentamento.',
-  'Resposta reflexiva sobre a escrita da História: figuras derrotadas e desprezadas em sua época podem ser ressignificadas como símbolos (Espártaco e a resistência). Valorizar a percepção de que o olhar histórico muda com o tempo e os valores.',
-  'Espera-se a explicação do "colapso em cadeia": fim das conquistas → menos escravos → queda de produção e arrecadação → inflação/insegurança → ruralização → colonato (colono preso à terra pagando renda) → enfraquecimento do Estado diante das invasões.',
-  'Resposta autoral. Avaliar a escolha de um costume atual pertinente, sua descrição e a formulação de um questionamento propriamente ético (que vá além do "todo mundo faz" e pergunte pela justiça/dignidade), no espírito socrático/platônico/aristotélico.'
-];
-
-function chkNome(){
-  const v = document.getElementById('cnome').value.trim();
-  document.getElementById('bstart').disabled = v.length < 3;
-}
-
-function iniciar(){
-  nome = document.getElementById('cnome').value.trim();
-  if (nome.length < 3) return;
-  document.getElementById('capa').style.display = 'none';
-  document.getElementById('conteudo').style.display = 'block';
-  document.getElementById('hdr-nome').textContent = nome;
-  buildObj();
-  buildDiss();
-}
-
-function buildObj(){
-  const ct = document.getElementById('questoes-obj');
-  QUIZ.forEach(q => {
-    const opts = q.alts.map((a,i)=>`
-      <div class="opt" id="opt-${q.num}-${i}" onclick="marcar(${q.num},${i})">
-        <div class="opt-letra">${LETRAS[i]}</div>
-        <div class="opt-txt">${a}</div>
-        <div class="opt-mark" id="mark-${q.num}-${i}"></div>
-      </div>`).join('');
-    ct.innerHTML += `
-      <div class="q-card" id="qcard-${q.num}">
-        <div class="q-num">Questão ${q.num} <span class="q-badge" id="badge-${q.num}"></span></div>
-        <div class="q-enunc">${q.enunc}</div>
-        ${opts}
-      </div>`;
-  });
-}
-
-function buildDiss(){
-  const ct = document.getElementById('questoes-diss');
-  DISSERT.forEach(q => {
-    ct.innerHTML += `
-      <div class="q-card" id="qcard-${q.num}">
-        <div class="q-num">Questão ${q.num} <span class="q-badge b-fill" id="badge-${q.num}">✓ respondida</span></div>
-        <div class="q-enunc">${q.enunc}</div>
-        <div class="textarea-wrap">
-          <textarea class="q-textarea" id="resp-${q.num}" placeholder="Escreva sua resposta aqui…"
-            oninput="onType(${q.num})" onpaste="return false" oncopy="return false" oncut="return false"
-            oncontextmenu="return false" ondrop="return false"></textarea>
-          <div class="char-count" id="cc-${q.num}">0 / ${MIN_CHARS} caracteres mínimos</div>
-        </div>
-      </div>`;
-  });
-  protegerTextareas();
-}
-
-function protegerTextareas(){
-  // Bloqueio robusto de copiar/colar/recortar/arrastar — inclusive em celulares e tablets.
-  const tiposColar = ['insertFromPaste','insertFromPasteAsQuotation','insertFromDrop','insertFromYank'];
-
-  function flashAviso(ta){
-    let t = document.getElementById('toast-colar');
-    if(!t){
-      t = document.createElement('div'); t.id = 'toast-colar';
-      t.textContent = '⚠️ Colar está desativado. Digite sua resposta.';
-      document.body.appendChild(t);
-    }
-    t.classList.add('show');
-    clearTimeout(window.__toastT);
-    window.__toastT = setTimeout(()=>t.classList.remove('show'), 1800);
-  }
-  function numDe(ta){ return parseInt(ta.id.split('-')[1], 10); }
-  function reverter(ta){
-    ta.value = ta.dataset.prev || '';
-    flashAviso(ta);
-    onType(numDe(ta));
-  }
-
-  document.querySelectorAll('.q-textarea').forEach(ta => {
-    ta.dataset.prev = ta.value || '';
-    // 1) Eventos clássicos
-    ['paste','copy','cut','drop','dragstart','dragover','dragenter','contextmenu'].forEach(ev => {
-      ta.addEventListener(ev, e => { e.preventDefault(); e.stopPropagation(); return false; });
-    });
-    // 2) beforeinput — barra a colagem antes de inserir (Chrome/Safari modernos)
-    ta.addEventListener('beforeinput', e => {
-      if (tiposColar.includes(e.inputType)) { e.preventDefault(); flashAviso(ta); }
-    });
-    // 3) input — fallback que reverte colagens que escaparam (sem afetar digitação/autocomplete)
-    ta.addEventListener('input', e => {
-      // 3a) colagem identificada com precisão pelo tipo de evento
-      if (e.inputType && tiposColar.includes(e.inputType)) { reverter(ta); return; }
-      // 3b) inserção de um bloco grande de uma só vez — cobre a "Área de transferência" do
-      //     Gboard/Android e teclados que inserem o clipe como se fosse digitação (insertText).
-      //     A digitação manual e o autocomplete inserem poucos caracteres por evento.
-      const prev = ta.dataset.prev || '';
-      if (ta.value.length - prev.length >= 25) { reverter(ta); return; }
-      ta.dataset.prev = ta.value;
-    });
-  });
-}
-
-function marcar(num, idx){
-  if (corrigido) return;
-  respMC[num] = idx;
-  const q = QUIZ.find(x=>x.num===num);
-  q.alts.forEach((a,i)=>{
-    document.getElementById('opt-'+num+'-'+i).classList.toggle('sel', i===idx);
-  });
-  document.getElementById('qcard-'+num).classList.add('respondida');
-  atualizarProgresso();
-}
-
-function onType(num){
-  if (corrigido) return;
-  const ta = document.getElementById('resp-'+num);
-  const cc = document.getElementById('cc-'+num);
-  const card = document.getElementById('qcard-'+num);
-  const badge = document.getElementById('badge-'+num);
-  const len = ta.value.length;
-  cc.textContent = len + ' caracteres' + (len < MIN_CHARS ? ' (mínimo: '+MIN_CHARS+')' : ' ✓');
-  if (len >= MIN_CHARS){
-    cc.className = 'char-count ok'; ta.classList.add('preenchida'); card.classList.add('preenchida'); badge.style.display='inline-block';
-  } else {
-    cc.className = len > 30 ? 'char-count warn' : 'char-count'; ta.classList.remove('preenchida'); card.classList.remove('preenchida'); badge.style.display='none';
-  }
-  atualizarProgresso();
-}
-
-function atualizarProgresso(){
-  let count = Object.keys(respMC).length;
-  DISSERT.forEach(q=>{ if (document.getElementById('resp-'+q.num).value.length >= MIN_CHARS) count++; });
-  document.getElementById('hdr-resp').textContent = count;
-  document.getElementById('bprog').style.width = Math.round(count/TOTAL*100)+'%';
-}
-
-function tentarFinalizar(){
-  const faltamMC = QUIZ.filter(q => respMC[q.num]===undefined).map(q=>q.num);
-  const faltamD = DISSERT.filter(q => document.getElementById('resp-'+q.num).value.length < MIN_CHARS).map(q=>q.num);
-  const faltam = faltamMC.concat(faltamD);
-  if (faltam.length > 0){
-    document.getElementById('qtd-faltando').textContent = faltam.length;
-    const al = document.getElementById('alerta-incompleto');
-    al.style.display = 'block';
-    al.scrollIntoView({behavior:'smooth', block:'center'});
-    setTimeout(()=>{
-      const el = document.getElementById('qcard-'+faltam[0]);
-      if (el) el.scrollIntoView({behavior:'smooth', block:'center'});
-    }, 600);
-    return;
-  }
-  document.getElementById('alerta-incompleto').style.display = 'none';
-  corrigir();
-}
-
-function corrigir(){
-  corrigido = true;
-  let acertos = 0;
-  QUIZ.forEach(q=>{
-    const escolha = respMC[q.num];
-    const card = document.getElementById('qcard-'+q.num);
-    const badge = document.getElementById('badge-'+q.num);
-    const acertou = escolha === q.correta;
-    if (acertou) acertos++;
-    q.alts.forEach((a,i)=>{
-      const opt = document.getElementById('opt-'+q.num+'-'+i);
-      const mark = document.getElementById('mark-'+q.num+'-'+i);
-      opt.classList.add('travada'); opt.classList.remove('sel');
-      if (i === q.correta){ opt.classList.add('correta'); mark.textContent='✓'; mark.style.display='block'; }
-      if (i === escolha && !acertou){ opt.classList.add('errada'); mark.textContent='✗'; mark.style.display='block'; }
-    });
-    card.classList.remove('respondida');
-    card.classList.add(acertou ? 'acerto' : 'erro');
-    badge.textContent = acertou ? '✓ Acertou' : '✗ Errou';
-    badge.className = 'q-badge ' + (acertou ? 'b-ok' : 'b-no');
-  });
-  DISSERT.forEach(q=>{ document.getElementById('resp-'+q.num).disabled = true; });
-
-  window.__acertos = acertos;
-  const pct = Math.round(acertos/TOTAL_OBJ*100);
-  document.getElementById('pop-aluno').innerHTML = 'Aluno(a): <strong>'+nome+'</strong>';
-  document.getElementById('pop-resp').innerHTML = acertos+'<span>/20</span>';
-  document.getElementById('pop-sub').textContent = 'Objetivas — aproveitamento: '+pct+'%';
-  document.getElementById('pop-diss').textContent = '10 questões dissertativas registradas para correção do professor.';
-  let msg, ico;
-  if (pct>=80){ msg='Excelente desempenho nas objetivas!'; ico='🏆'; }
-  else if (pct>=60){ msg='Bom trabalho — revise os pontos que errou.'; ico='🎯'; }
-  else if (pct>=40){ msg='Atenção: retome o texto de apoio.'; ico='📚'; }
-  else { msg='Vamos revisar o conteúdo com calma.'; ico='📖'; }
-  document.getElementById('pop-ico').textContent = ico;
-  document.getElementById('pop-msg').textContent = msg;
-
-  setTimeout(()=>{ document.getElementById('popup-resultado').classList.add('aberto'); }, 300);
-}
-
-function fecharPopupEBaixar(){
-  document.getElementById('popup-resultado').classList.remove('aberto');
-  setTimeout(()=>gerarPDF(), 350);
-}
-document.getElementById('popup-resultado').addEventListener('click', function(e){
-  if (e.target === this) this.classList.remove('aberto');
-});
-
-// ── GERAR PDF ──
-function sleep(ms){ return new Promise(r=>setTimeout(r,ms)); }
-
-async function gerarPDF(){
-  const overlay = document.createElement('div');
-  overlay.id = 'pdf-overlay';
-  overlay.innerHTML = `<div class="pdf-box">
-    <div class="ico">📄</div><h4>Gerando PDF…</h4>
-    <p>Renderizando questões, gabarito e respostas.</p><p>Aguarde alguns instantes.</p>
-    <div class="pdf-spin"></div>
-    <div id="pdf-prog-wrap"><div id="pdf-prog"></div></div>
-    <div id="pdf-prog-txt">0%</div></div>`;
-  document.body.appendChild(overlay);
-  await sleep(80);
-  const setP = (pct,msg)=>{ const pp=document.getElementById('pdf-prog'),pt=document.getElementById('pdf-prog-txt'); if(pp)pp.style.width=pct+'%'; if(pt)pt.textContent=msg||pct+'%'; };
-
-  try{
-    const { jsPDF } = window.jspdf;
-    const pdf = new jsPDF({ orientation:'portrait', unit:'px', format:'a4', hotfixes:['px_scaling'] });
-    const PW = pdf.internal.pageSize.getWidth(), PH = pdf.internal.pageSize.getHeight();
-    const ML = 28, CW = PW - ML*2; let y = ML;
-
-    const addImg = async (el)=>{
-      const canvas = await html2canvas(el,{scale:2,useCORS:true,logging:false,backgroundColor:'#ffffff',scrollX:0,scrollY:0,windowWidth:900});
-      const imgW = CW, imgH = (canvas.height/canvas.width)*imgW;
-      const dataUrl = canvas.toDataURL('image/jpeg',.92), avail = PH - ML*2;
-      if (imgH <= avail){
-        if (y+imgH > PH-ML){ pdf.addPage(); y=ML; }
-        pdf.addImage(dataUrl,'JPEG',ML,y,imgW,imgH); y += imgH+8;
-      } else {
-        const pxPerPdfPt = canvas.width/imgW; let srcY = 0;
-        while (srcY < canvas.height){
-          const availPt = PH - y - ML, sliceH_pt = Math.min(availPt, avail);
-          const sliceH_px = Math.round(sliceH_pt*pxPerPdfPt), actualH_px = Math.min(sliceH_px, canvas.height-srcY);
-          const tmp = document.createElement('canvas'); tmp.width = canvas.width; tmp.height = actualH_px;
-          tmp.getContext('2d').drawImage(canvas,0,srcY,canvas.width,actualH_px,0,0,canvas.width,actualH_px);
-          const sliceUrl = tmp.toDataURL('image/jpeg',.92), slicePt = (actualH_px/canvas.width)*imgW;
-          pdf.addImage(sliceUrl,'JPEG',ML,y,imgW,slicePt);
-          srcY += actualH_px; y += slicePt;
-          if (srcY < canvas.height){ pdf.addPage(); y=ML; }
-        }
-        y += 8;
-      }
-    };
-    const band = async (tag, txt)=>{
-      const b = document.createElement('div');
-      b.style.cssText='width:860px;font-family:Arial,sans-serif;position:absolute;left:-9999px;top:0';
-      b.innerHTML = `<div style="background:linear-gradient(90deg,#1a6b8a,#1a1a2e);border-radius:8px;padding:12px 22px;display:flex;align-items:center;gap:12px">
-        <span style="background:rgba(255,255,255,.2);color:#fff;font-weight:700;font-size:12px;letter-spacing:1px;border-radius:20px;padding:3px 12px">${tag}</span>
-        <span style="color:#fff;font-size:15px;font-weight:700">${txt}</span></div>`;
-      document.body.appendChild(b); await sleep(20); await addImg(b); document.body.removeChild(b);
-    };
-
-    const acertos = window.__acertos, pct = Math.round(acertos/TOTAL_OBJ*100);
-    const now = new Date();
-    const dtStr = now.toLocaleDateString('pt-BR')+' às '+now.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});
-
-    // CAPA
-    setP(4,'Preparando capa…'); await sleep(40);
-    const coverEl = document.createElement('div');
-    coverEl.style.cssText='width:860px;font-family:Arial,sans-serif;overflow:hidden;position:absolute;left:-9999px;top:0';
-    coverEl.innerHTML = `
-      <div style="background:linear-gradient(135deg,#0d2233 0%,#1a6b8a 60%,#0f8c6e 100%);padding:32px 48px 28px;color:white">
-        <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;opacity:.7;font-weight:700;margin-bottom:6px">Ciências Humanas · História · 1ª Série do Ensino Médio</div>
-        <div style="font-size:26px;font-weight:900;line-height:1.2;margin-bottom:5px">A Antiguidade Clássica</div>
-        <div style="font-size:13px;opacity:.8;font-style:italic">Moral e Ética · Escravismo na Grécia e em Roma · 20 objetivas + 10 dissertativas</div>
-      </div>
-      <div style="background:#f5f5fa;padding:22px 48px 26px;border-bottom:3px solid #e0d8f0">
-        <div style="font-size:9px;text-transform:uppercase;letter-spacing:2px;color:#1a6b8a;font-weight:700;margin-bottom:5px">Aluno(a)</div>
-        <div style="font-size:20px;font-weight:700;color:#1a1a2e;border-bottom:2.5px solid #1a6b8a;padding-bottom:6px;display:inline-block;margin-bottom:16px">${nome}</div>
-        <div style="display:flex;gap:12px;flex-wrap:wrap">
-          <div style="background:white;border-radius:8px;padding:12px 18px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.07);min-width:84px">
-            <div style="font-size:22px;font-weight:900;color:#0f8c6e">${acertos}/20</div>
-            <div style="font-size:9px;text-transform:uppercase;letter-spacing:1px;color:#888;margin-top:2px">Objetivas</div></div>
-          <div style="background:white;border-radius:8px;padding:12px 18px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.07);min-width:84px">
-            <div style="font-size:22px;font-weight:900;color:#1a6b8a">${pct}%</div>
-            <div style="font-size:9px;text-transform:uppercase;letter-spacing:1px;color:#888;margin-top:2px">Aproveitamento</div></div>
-          <div style="background:white;border-radius:8px;padding:12px 18px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.07);min-width:84px">
-            <div style="font-size:22px;font-weight:900;color:#e67e22">10</div>
-            <div style="font-size:9px;text-transform:uppercase;letter-spacing:1px;color:#888;margin-top:2px">Dissertativas</div></div>
-          <div style="background:white;border-radius:8px;padding:12px 18px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.07);min-width:140px">
-            <div style="font-size:13px;font-weight:700;color:#333">${dtStr}</div>
-            <div style="font-size:9px;text-transform:uppercase;letter-spacing:1px;color:#888;margin-top:2px">Enviado em</div></div>
-        </div>
-        <div style="font-size:9px;color:#bbb;margin-top:14px">Colégio Estadual Rodolfo de Oliveira · Goiás · 2026</div>
-      </div>`;
-    document.body.appendChild(coverEl); await sleep(60); await addImg(coverEl); document.body.removeChild(coverEl);
-
-    // PARTE 1 — OBJETIVAS
-    await band('PARTE 1','Questões Objetivas — Gabarito Comentado');
-    for (let k=0;k<QUIZ.length;k++){
-      const q = QUIZ[k], escolha = respMC[q.num], acertou = escolha === q.correta;
-      setP(8+Math.round(k/QUIZ.length*46),'Objetiva '+q.num+'/20…'); await sleep(12);
-      const altsHTML = q.alts.map((a,i)=>{
-        let bg='#fdfdff',bd='#e3e0ef',cor='#2d2d4a',tag='';
-        if (i===q.correta){ bg='#e9faf3'; bd='#8ed8c8'; cor='#0d2530'; tag='<span style="color:#0a6e57;font-weight:700"> ✓ correta</span>'; }
-        if (i===escolha && !acertou){ bg='#fdeeee'; bd='#e3a3a3'; cor='#7a1f1f'; tag='<span style="color:#b23b3b;font-weight:700"> ✗ sua resposta</span>'; }
-        else if (i===escolha && acertou){ tag='<span style="color:#0a6e57;font-weight:700"> ← sua resposta</span>'; }
-        return `<div style="display:flex;gap:9px;align-items:flex-start;background:${bg};border:1px solid ${bd};border-radius:6px;padding:8px 12px;margin-bottom:6px">
-          <div style="flex:0 0 auto;font-weight:700;color:#1a6b8a;font-size:12px">${LETRAS[i]})</div>
-          <div style="font-size:12px;color:${cor};line-height:1.55">${a}${tag}</div></div>`;
-      }).join('');
-      const headBg = acertou ? 'linear-gradient(90deg,#0f8c6e,#0a6e57)' : 'linear-gradient(90deg,#d64545,#a83232)';
-      const qEl = document.createElement('div');
-      qEl.style.cssText='width:860px;font-family:Arial,sans-serif;background:white;overflow:hidden;border:1px solid #e0ddf0;border-radius:10px;position:absolute;left:-9999px;top:0';
-      qEl.innerHTML = `
-        <div style="background:${headBg};padding:10px 22px;display:flex;justify-content:space-between;align-items:center">
-          <span style="color:white;font-weight:700;font-size:13px;letter-spacing:.8px">QUESTÃO ${q.num}</span>
-          <span style="background:rgba(255,255,255,.2);color:white;font-size:11px;padding:3px 12px;border-radius:20px;font-weight:700">${acertou?'ACERTOU':'ERROU'}</span></div>
-        <div style="padding:16px 24px 14px;background:#fdfdff">
-          <div style="font-size:13px;font-weight:700;color:#1a1a2e;line-height:1.6;margin-bottom:12px">${q.enunc}</div>
-          ${altsHTML}
-          <div style="margin-top:10px;background:#e8f9f5;border:1px solid #8ed8c8;border-radius:6px;padding:10px 14px">
-            <span style="font-size:10px;font-weight:700;color:#0a6e57;text-transform:uppercase;letter-spacing:1px">Gabarito: ${LETRAS[q.correta]} · </span>
-            <span style="font-size:12px;color:#0d2530;line-height:1.6">${q.coment}</span></div>
-        </div>`;
-      document.body.appendChild(qEl); await sleep(12); await addImg(qEl); document.body.removeChild(qEl);
-    }
-
-    // PARTE 2 — DISSERTATIVAS
-    await band('PARTE 2','Questões Dissertativas — Respostas e Comentários');
-    for (let k=0;k<DISSERT.length;k++){
-      const q = DISSERT[k], resp = document.getElementById('resp-'+q.num).value, coment = COMENTARIOS_D[k];
-      setP(56+Math.round(k/DISSERT.length*38),'Dissertativa '+q.num+'/30…'); await sleep(12);
-      const qEl = document.createElement('div');
-      qEl.style.cssText='width:860px;font-family:Arial,sans-serif;background:white;overflow:hidden;border:1px solid #e0ddf0;border-radius:10px;position:absolute;left:-9999px;top:0';
-      qEl.innerHTML = `
-        <div style="background:linear-gradient(90deg,#1a6b8a,#154f70);padding:10px 22px;display:flex;justify-content:space-between;align-items:center">
-          <span style="color:white;font-weight:700;font-size:13px;letter-spacing:.8px">QUESTÃO ${q.num}</span>
-          <span style="background:rgba(255,255,255,.15);color:rgba(255,255,255,.9);font-size:11px;padding:3px 12px;border-radius:20px;font-weight:600">Dissertativa</span></div>
-        <div style="padding:18px 24px 16px;background:#fdfdff">
-          <div style="font-size:13px;font-weight:700;color:#1a1a2e;line-height:1.6;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid #eee">${q.enunc}</div>
-          <div style="margin-bottom:12px">
-            <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px">
-              <div style="width:4px;height:15px;background:#1a6b8a;border-radius:2px"></div>
-              <div style="font-size:10px;font-weight:700;color:#1a6b8a;text-transform:uppercase;letter-spacing:1.5px">Resposta do Aluno(a)</div></div>
-            <div style="background:#f0f7fb;border:1.5px solid #a8cfe8;border-radius:8px;padding:13px 16px;min-height:50px">
-              <div style="font-size:12.5px;color:#1a1a2e;line-height:1.8;white-space:pre-wrap">${esc(resp)}</div></div>
-          </div>
-          <div>
-            <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px">
-              <div style="width:4px;height:15px;background:#0f8c6e;border-radius:2px"></div>
-              <div style="font-size:10px;font-weight:700;color:#0a6e57;text-transform:uppercase;letter-spacing:1.5px">Comentário do Professor</div></div>
-            <div style="background:#e8f9f5;border:1.5px solid #8ed8c8;border-radius:8px;padding:13px 16px">
-              <div style="font-size:12.5px;color:#0d2530;line-height:1.8">${coment}</div></div>
-          </div>
-        </div>`;
-      document.body.appendChild(qEl); await sleep(12); await addImg(qEl); document.body.removeChild(qEl);
-    }
-
-    // RODAPÉ
-    setP(96,'Finalizando…'); await sleep(30);
-    const totalPages = pdf.getNumberOfPages();
-    for (let p=1;p<=totalPages;p++){
-      pdf.setPage(p);
-      const fEl = document.createElement('div');
-      fEl.style.cssText=`width:${Math.round(PW)}px;height:22px;background:#f5f5fa;display:flex;align-items:center;justify-content:space-between;padding:0 28px;font-size:10px;color:#888;font-family:Arial,sans-serif;position:absolute;left:-9999px;top:0`;
-      fEl.innerHTML = `<span>A Antiguidade Clássica · ${nome} · Objetivas: ${acertos}/20</span><span>Página ${p} de ${totalPages}</span>`;
-      document.body.appendChild(fEl);
-      const fc = await html2canvas(fEl,{scale:2,logging:false,backgroundColor:'#f5f5fa'});
-      document.body.removeChild(fEl);
-      const fUrl = fc.toDataURL('image/jpeg',.9), fH = (fc.height/fc.width)*PW;
-      pdf.setFillColor(245,245,250); pdf.rect(0,PH-fH,PW,fH,'F');
-      pdf.addImage(fUrl,'JPEG',0,PH-fH,PW,fH);
-    }
-
-    setP(100,'Salvando…'); await sleep(200);
-    const safeName = nome.replace(/[^a-zA-Z0-9_\-]/g,'_');
-    pdf.save('Antiguidade_Classica_'+safeName+'.pdf');
-
-  } catch(err){
-    console.error(err);
-    alert('Erro ao gerar PDF: '+err.message);
-  } finally {
-    const ov = document.getElementById('pdf-overlay');
-    if (ov) document.body.removeChild(ov);
-  }
-}
-</script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  </section>
+</main>
+<footer>
+  Colégio Estadual Rodolfo de Oliveira &middot; Ciências Humanas e Sociais Aplicadas &middot; 1ª série do Ensino Médio<br>
+  <a href="index.html">Voltar ao índice</a>
+</footer>
 </body>
 </html>
