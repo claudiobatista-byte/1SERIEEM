@@ -164,6 +164,34 @@ footer a{color:var(--azul-claro)}
   font-family:'JetBrains Mono',monospace;font-size:1.35rem;line-height:1;color:var(--tinta-suave);padding:4px 8px}
 .fechar:hover{color:var(--bronze)}
 
+/* CARD DE DOWNLOAD DA AULA (na coluna lateral) */
+a.mini-card{display:block;text-decoration:none;color:var(--tinta)}
+.mini-card.card-aula{border-top-color:var(--bronze);background:var(--sepia)}
+.mini-card.card-aula .abrir{color:var(--azul-claro)}
+
+/* BOX DE ATIVIDADE (padrão tema1) */
+.atividades-box{
+  background:linear-gradient(135deg,var(--branco),var(--sepia));
+  border:1px solid var(--linha);border-left:4px solid var(--bronze);
+  border-radius:12px;padding:20px 22px;margin:34px 0 0;
+  box-shadow:var(--sombra);clear:both}
+.atividades-box > .eyebrow{display:block;font-family:'JetBrains Mono',monospace;font-size:.7rem;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--bronze);margin-bottom:4px}
+.atividades-box > h4{margin:0 0 6px;font-family:'Playfair Display',Georgia,serif;
+  font-size:1.08rem;color:var(--azul)}
+.atividades-box > p{margin:0 0 16px;color:var(--tinta-suave);font-size:.94rem;text-align:left}
+.atividades-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.atividade-card{background:var(--branco);border:1px solid var(--linha);border-radius:10px;padding:14px 16px}
+.atividade-card .atividade-titulo{display:flex;align-items:center;gap:8px;
+  font-family:'Playfair Display',Georgia,serif;font-size:.98rem;color:var(--azul);margin-bottom:4px}
+.atividade-card .atividade-desc{font-size:.86rem;color:var(--tinta-suave);margin:0 0 12px;text-align:left}
+.atividade-card .atividade-botoes{display:flex;gap:8px;flex-wrap:wrap}
+.atividade-card a.link-btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;
+  font-size:.82rem;font-weight:600;padding:8px 14px;border-radius:8px;transition:filter .15s ease}
+.atividade-card a.link-btn.abrir{background:var(--azul);color:#fff}
+.atividade-card a.link-btn.pdf{background:transparent;color:var(--bronze);border:1px solid var(--bronze)}
+.atividade-card a.link-btn:hover{filter:brightness(1.15)}
+
 @media (max-width:760px){
   /* no celular a coluna deixa de flutuar e vai para o fim do texto */
   main section{display:flex;flex-direction:column}
@@ -216,6 +244,12 @@ footer a{color:var(--azul-claro)}
     <span class="chamada">A trajetória do termo e o que ela revela sobre desigualdade.</span>
     <span class="abrir">Ler o texto &rarr;</span>
   </button>
+  <a class="mini-card card-aula" href="https://drive.google.com/file/d/1nRWUrFVrJ2D6iCsafVhsZNmtGmNn41TJ/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+    <span class="rotulo">Material da aula</span>
+    <h4>Baixar a aula em PDF</h4>
+    <span class="chamada">Slides da aula.</span>
+    <span class="abrir">Abrir PDF &#8599;</span>
+  </a>
 </aside>
 
 <p>Quando assistimos a um filme de outro país ou vemos uma notícia sobre um costume distante, é comum sentirmos estranhamento. Larvas, aranhas, escorpiões, formigas, gafanhotos e grilos, por exemplo, fazem parte da culinária de vários países — o consumo é tão recorrente e importante nesses lugares que a Organização das Nações Unidas para a Alimentação e a Agricultura chegou a lançar, em 2013, uma campanha incentivando a criação desses animais como meio de combate à fome. O estranhamento diante desse hábito não significa que o outro esteja errado: significa que estamos diante de uma cultura diferente da nossa.</p>
@@ -247,6 +281,22 @@ footer a{color:var(--azul-claro)}
 </div>
 
 <p>As duas leituras não se opõem: Laraia insiste em <em>como</em> a cultura se transmite e se acumula; Santos, em <em>quem</em> tem acesso a ela e em como o poder atravessa o plano cultural. Juntas, elas sustentam o trabalho com fontes que faremos nos próximos tópicos.</p>
+
+<div class="atividades-box">
+  <span class="eyebrow">Pratique</span>
+  <h4>&#128221; Atividade de fixação</h4>
+  <p>Reforce o que você acabou de estudar com os textos de apoio e as questões dissertativas abaixo.</p>
+  <div class="atividades-grid">
+    <div class="atividade-card">
+      <div class="atividade-titulo">&#128196; Atividade 1 — O que é cultura?</div>
+      <p class="atividade-desc">Dois textos de apoio (Laraia e Santos) e 6 questões dissertativas.</p>
+      <div class="atividade-botoes">
+        <a class="link-btn abrir" href="topico-1/atv1.html" target="_blank" rel="noopener noreferrer">Abrir atividade &#8599;</a>
+        <a class="link-btn pdf" href="https://drive.google.com/file/d/1jrnj5my7YNoUCrzADEGmA2nGymDW3vR7/view?usp=sharing" target="_blank" rel="noopener noreferrer">Abrir em PDF &#8599;</a>
+      </div>
+    </div>
+  </div>
+</div>
 
   </section>
   <div class="nav-topicos">
@@ -313,7 +363,7 @@ footer a{color:var(--azul-claro)}
     document.body.style.overflow = '';
     aberto = null;
   }
-  document.querySelectorAll('.mini-card').forEach(function(c){
+  document.querySelectorAll('button.mini-card').forEach(function(c){
     c.addEventListener('click', function(){ abrir(c.getAttribute('data-modal')); });
   });
   document.querySelectorAll('.fechar').forEach(function(b){
